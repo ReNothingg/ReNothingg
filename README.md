@@ -1,20 +1,43 @@
-### Hi there 👋, my name is Pasha
-#### I am programming skuf
+# Привет, я ReNothingg! 👋
 
-I do a lot of different projects just for fun. Half of my repositories are non-working portotypes that I have already deleted from my PC. That's how it is.
+[![GitHub followers](https://img.shields.io/github/followers/ReNothingg?style=social)](https://github.com/ReNothingg)
 
-Skills: HTML / PYTHON / C# / C++ / RUST / JS / HTML / CSS
+## Обо мне
 
-- 📫 How to reach me: you can write to my email: pashasob2009@gmail.com 
-- ⚡ Fun fact: To find the temperature when both are equal, we use an old algebra trick and just set ºF = ºC and solve one of the equations. So the temperature when both the Celsius and Fahrenheit scales are the same is -40 degrees. 
+Привет! Меня зовут **ReNothingg**. Я разработчик, увлечённый созданием AI проектов и постоянным развитием. Вот несколько фактов обо мне:
 
+- 🔭 Сейчас работаю над интересным AI проектом - **ReMind**
+- 🌱 Постоянно учусь новому в области технологий
+- 👯 Всегда открыт для сотрудничества
+- 😊 Обожаю новые знакомства
+- 🤖 Фанатею по AI
 
-[<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40'>](https://github.com/ReNothingg)  [<img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg' alt='YouTube' height='40'>](https://www.youtube.com/channel/@blootber-spa)  
+## Навыки
 
-<p align="center">
-  <img height="50%" width="auto" src ="https://github-readme-stats.vercel.app/api?username=ReNothingg&show_icons=true&count_private=true&theme=darcula&hide_border=true&hide=issues,contribs&bg_color=00000000">
-  <img height="50%" width="auto" src ="https://github-readme-stats.vercel.app/api/top-langs/?username=ReNothingg&layout=compact&hide_border=true&theme=darcula&bg_color=00000000&langs_count=6&hide=jupyter%20notebook,tex,css,php&exclude_repo=Pacman-AI">
-  <img src ="https://github-readme-streak-stats.herokuapp.com?user=ReNothingg&theme=darcula&hide_border=true&background=FFFFFF00">
-</p>
+![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat&logo=c%2B%2B&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat&logo=csharp&logoColor=white)
+![Unity](https://img.shields.io/badge/Unity-FFFFFF?style=flat&logo=unity&logoColor=black)
+![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-000000?style=flat&logo=unrealengine&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
 
-[![Readme Quotes](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)](https://github.com/piyushsuthar/github-readme-quotes)
+## Контакты
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/yourtelegram)  
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:youremail@example.com)  
+[![Steam](https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/id/yoursteam)  
+[![X](https://img.shields.io/badge/X-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourtwitter)  
+[![TikTok](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@yourtiktok)
+
+## Чуть-чуть статистики GitHub
+
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ReNothingg&show_icons=true&theme=radical)  
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ReNothingg&layout=compact&theme=radical)  
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ReNothingg&theme=radical)
+
+---
+
+*Спасибо за посещение моего профиля!*
