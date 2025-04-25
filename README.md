@@ -1,85 +1,36 @@
-# Привет, я ReNothingg! 👋
+<h1 align="center">
+  Привет, я <a href="https://ваш-сайт.ru/">Ваше Имя</a> 
+  <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32" />
+</h1>
+<h3 align="center">Фронтенд-разработчик из России · Веду блог о программировании</h3>
 
-[![GitHub followers](https://img.shields.io/github/followers/ReNothingg?style=social)](https://github.com/ReNothingg)
+## О себе
+- 🎓 Учусь на старших курсах факультета ИТ.
+- 💻 Интересуюсь web-разработкой и open-source проектами.
+- 🎯 Цель: стать опытным full-stack разработчиком.
 
-> ### Статистика
-> ![Lang](https://github-readme-stats.vercel.app/api/top-langs?username=renothingg&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=8&theme=black&hide_border=false&order=2)
-> ![Trofiy](https://github-profile-trophy.vercel.app/?username=renothingg&theme=black)
-> 
-> ![GitHub Streak](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&radius=16&theme=black-84&area=true&order=5)
-> 
-> ![Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&theme=black)
->
-___
-### Мои языки
-<table align="center">
-  <tr>
-    <th>HTML</th>
-    <th>CSS</th>
-    <th>JavaScript</th>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" width=120></td>
-  </tr>
-  <tr>
-    <th>Python</th>
-    <th>C++</th>
-    <th>C#</th>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" width=120></td>
-  </tr>
-  <tr>
-    <th>Unity</th>
-    <th>Unreal Engine</th>
-    <th>Rust</th>
-  </tr>
-  <tr>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/unity/unity-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/unrealengine/unrealengine-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" width=120></td>
-  </tr>
-</table>
+## Проекты
+- [Мой проект 1](https://github.com/ваш_пользователь/проект1) – инструмент для анализа данных.
+- [Мой проект 2](https://github.com/ваш_пользователь/проект2) – сайт-портфолио с React.
 
-## Прочие навыки
-![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)   
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) 
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![Win Terminal](https://img.shields.io/badge/windows%20terminal-4D4D4D?style=for-the-badge&logo=windows%20terminal&logoColor=white) 
-![Bash](https://img.shields.io/badge/Shell_Script-121011?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![Linux Base](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Figma](https://img.shields.io/badge/figma-%230db7ed.svg?style=for-the-badge&logo=figma&logoColor=white)
-___
-### ИИ который я использую
-![Google Gemini](https://img.shields.io/badge/google%20gemini-8E75B2?style=for-the-badge&logo=google%20gemini&logoColor=white)
-![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
-![Claude](https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic&logoColor=white)
-![DeepSeek](https://img.shields.io/badge/DeepSeek-0066FF?style=for-the-badge&logo=deepseek&logoColor=white)
-![Grok](https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=grok&logoColor=white)
-___
+## Цели
+- Изучить современные фреймворки (Vue, Svelte).
+- Публиковать статьи и вести обучающий блог.
 
-### Контакты
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ReNothingg)  
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:pashasob2009@gmail.com)  
-[![Steam](https://img.shields.io/badge/Steam-000000?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/id/Arbuzekkk)  
-[![X](https://img.shields.io/badge/X-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://x.com/BLOOTBER515)  
-[![TikTok](https://img.shields.io/badge/TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@renothingg)
+## Статистика GitHub
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=USERNAME&show_icons=true&theme=dark" alt="GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=USERNAME&layout=compact&theme=dark&langs_count=5" alt="Top Languages" />
+</p>
 
-### Чуть-чуть статистики GitHub
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=ReNothingg&show_icons=true&theme=radical)  
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ReNothingg&layout=compact&theme=radical)  
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ReNothingg&theme=radical)
+## Навыки
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,js,html,css,react&theme=dark" alt="Skills" />
+</p>
 
----
-
-*Спасибо за посещение моего профиля!*
+## Контакты
+<p align="center">
+  [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ваше_имя) 
+  [![Telegram](https://img.shields.io/badge/-Telegram-0088CC?style=flat-square&logo=telegram&logoColor=white)](https://t.me/ваше_имя) 
+  [![Email](https://img.shields.io/badge/-Email-%23D44638?style=flat-square&logo=gmail&logoColor=white)](mailto:you@example.com)
+</p>
