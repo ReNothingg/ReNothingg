@@ -4,8 +4,6 @@
    [![Visit Count](https://count.getloli.com/get/@renothing?theme=rule34)](#)
 </h1>
 
-[![GitHub followers](https://img.shields.io/github/followers/ReNothingg?style=social)](https://github.com/ReNothingg)
-
 > ### Статистика
 > ![Lang](https://github-readme-stats.vercel.app/api/top-langs?username=renothingg&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=8&theme=radical&hide_border=false&order=2)
 > ![Trofiy](https://github-profile-trophy.vercel.app/?username=renothingg&theme=radical)
