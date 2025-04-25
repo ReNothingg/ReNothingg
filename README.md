@@ -2,13 +2,14 @@
 
 [![GitHub followers](https://img.shields.io/github/followers/ReNothingg?style=social)](https://github.com/ReNothingg)
 
-### Обо мне
-Привет! Меня зовут **ReNothingg**. Я разработчик, увлечённый созданием AI проектов и постоянным развитием. Вот несколько фактов обо мне:
-- 🔭 Сейчас работаю над интересным AI проектом - **ReMind**
-- 🌱 Постоянно учусь новому в области технологий
-- 👯 Всегда открыт для сотрудничества
-- 😊 Обожаю новые знакомства
-- 🤖 Фанатею по AI
+> ### Статистика
+> ![Lang](https://github-readme-stats.vercel.app/api/top-langs?username=renothingg&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=8&theme=black&hide_border=false&order=2)
+> ![Trofiy](https://github-profile-trophy.vercel.app/?username=renothingg&theme=black)
+> 
+> ![GitHub Streak](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&radius=16&theme=black-84&area=true&order=5)
+> 
+> ![Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&theme=black)
+>
 ___
 ### Мои языки
 <table align="center">
@@ -64,7 +65,7 @@ ___
 ![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic&logoColor=white)
 ![DeepSeek](https://img.shields.io/badge/DeepSeek-0066FF?style=for-the-badge&logo=deepseek&logoColor=white)
-![Grok](https://img.shields.io/badge/Grok-0066FF?style=for-the-badge&logo=grok&logoColor=white)
+![Grok](https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=grok&logoColor=white)
 ___
 
 ### Контакты
