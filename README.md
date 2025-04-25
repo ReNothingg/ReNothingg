@@ -1,7 +1,6 @@
 <h1 align="center">
    <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=40&pause=1000&center=true&width=870&height=200&lines=This+is+ReNothing+GitHub+Profile" alt="Typing SVG" /></a>
 
-   <h3> Просмотры профиля </h3>
    ![Profile Views](https://moe-counter.dsrkafuu.net/get/@ReNothingg?theme=rule34)
 </h1>
 
