@@ -5,13 +5,13 @@
 ## Обо мне
 
 Привет! Меня зовут **ReNothingg**. Я разработчик, увлечённый созданием AI проектов и постоянным развитием. Вот несколько фактов обо мне:
-
+___
 - 🔭 Сейчас работаю над интересным AI проектом - **ReMind**
 - 🌱 Постоянно учусь новому в области технологий
 - 👯 Всегда открыт для сотрудничества
 - 😊 Обожаю новые знакомства
 - 🤖 Фанатею по AI
-
+___
 ### Навыки
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat&logo=css3&logoColor=white)
@@ -22,7 +22,7 @@
 ![Unity](https://img.shields.io/badge/Unity-FFFFFF?style=flat&logo=unity&logoColor=black)
 ![Unreal Engine](https://img.shields.io/badge/Unreal%20Engine-000000?style=flat&logo=unrealengine&logoColor=white)
 ![Rust](https://img.shields.io/badge/Rust-000000?style=flat&logo=rust&logoColor=white)
-
+___
 ### Мои языки
 <table align="center">
   <tr>
@@ -56,6 +56,15 @@
     <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" width=120></td>
   </tr>
 </table>
+
+___
+### ИИ который я использую
+![Google Gemini](https://img.shields.io/badge/google%20gemini-8E75B2?style=for-the-badge&logo=google%20gemini&logoColor=white)
+![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)
+![Claude](https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic&logoColor=white)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-0066FF?style=for-the-badge&logo=deepseek&logoColor=white)
+![Grok](https://img.shields.io/badge/Grok-0066FF?style=for-the-badge&logo=grok&logoColor=white)
+___
 
 ### Контакты
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ReNothingg)  
