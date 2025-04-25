@@ -38,12 +38,10 @@ ___
   <tr>
     <th>Unity</th>
     <th>Unreal Engine</th>
-    <th>Rust</th>
   </tr>
   <tr>
     <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/unity/unity-original.svg" width=120></td>
     <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/unrealengine/unrealengine-original.svg" width=120></td>
-    <td><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" width=120></td>
   </tr>
 </table>
 
