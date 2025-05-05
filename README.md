@@ -5,11 +5,9 @@
 </h1>
 
 > ### Статистика
+> ![GitHub Streak](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&radius=16&theme=radical-84&area=true&order=5)
 > ![Lang](https://github-readme-stats.vercel.app/api/top-langs?username=renothingg&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=8&theme=radical&hide_border=false&order=2)
 > ![Trofiy](https://github-profile-trophy.vercel.app/?username=renothingg&theme=radical)
-> 
-> ![GitHub Streak](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&radius=16&theme=radical-84&area=true&order=5)
-> 
 > ![Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&theme=radical)
 >
 ___
