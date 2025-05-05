@@ -1,7 +1,7 @@
 <h1 align="center">
    <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=40&pause=1000&center=true&width=870&height=200&lines=This+is+ReNothingg+GitHub+Profile" alt="Typing SVG" /></a>
    
-   [![Visit Count](https://count.getloli.com/get/@renothing?theme=rule34)](#)
+   [![Visit Count](https://count.getloli.com/get/@renothingg?theme=rule34)](#)
 </h1>
 
 > ### Статистика
