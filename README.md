@@ -1,3 +1,5 @@
+[English version →](README-en.md)
+
 <h1 align="center">
   👋 Привет, я ReNothingg!
 </h1>
