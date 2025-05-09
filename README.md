@@ -111,6 +111,6 @@
 
 ## 🌐 Localization
 
-* [Русский](#readme) | [English](#readme-1)
+* [Русский](#readme) | [English](#README-en)
 
 <p align="center">✨ Спасибо за визит! / Thanks for stopping by! ✨</p>
