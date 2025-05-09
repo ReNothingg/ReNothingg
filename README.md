@@ -5,10 +5,10 @@
 </h1>
 
 > ### Статистика
-> ![GitHub Streak](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&radius=16&theme=github-dark&area=true&order=5)
-> > ![Trofiy](https://github-profile-trophy.vercel.app/?username=renothingg&theme=github-dark)
-> ![Lang](https://github-readme-stats.vercel.app/api/top-langs?username=renothingg&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=8&theme=github-dark&hide_border=false&order=2)
-> ![Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&theme=github-dark)
+> ![GitHub Streak](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&radius=16&theme=nightowl&area=true&order=5)
+> > ![Trofiy](https://github-profile-trophy.vercel.app/?username=renothingg&theme=nightowl)
+> ![Lang](https://github-readme-stats.vercel.app/api/top-langs?username=renothingg&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=8&theme=nightowl&hide_border=false&order=2)
+> ![Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&theme=nightowl)
 >
 ___
 ### Мои языки
