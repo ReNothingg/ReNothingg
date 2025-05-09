@@ -113,12 +113,4 @@
 
 * [Русский](#readme) | [English](#readme-1)
 
----
-
-<h1 align="center" id="readme-1">
-  👋 Hi, I'm ReNothingg!
-</h1>
-
-> English version of this README is coming soon.
-
 <p align="center">✨ Спасибо за визит! / Thanks for stopping by! ✨</p>
