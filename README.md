@@ -37,7 +37,6 @@
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=renothingg&layout=compact&langs_count=6&theme=onedark&hide_border=true" alt="Top Languages" />
 </p>
 
-![WakaTime](https://github-readme-stats.vercel.app/api/wakatime?username=renothingg)
 
 ---
 
