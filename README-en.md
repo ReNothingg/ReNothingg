@@ -22,7 +22,7 @@
 * 🌱 Learning Unity and Unreal Engine for game development.
 * 👯 Looking to collaborate on interesting projects.
 * 📫 Contact: [Telegram](https://t.me/ReNothingg) / [renothingg@gmail.com](mailto:renothingg@gmail.com)
-* ⚡ Fun fact: I love mountain hiking and portrait photography.
+* ⚡ Fun fact: My most used shortcut is Ctrl+Z. Because you don't always have to live with the consequences of your decisions.
 
 ---
 
@@ -67,13 +67,6 @@
 
 ---
 
-## 🎯 Learning Roadmap
-
-* **Summer 2025**: Rust, WebAssembly, advanced Docker and Kubernetes.  
-* **Fall 2025**: Machine Learning (PyTorch), NLP projects.  
-* **Winter 2025**: DevOps: Terraform, CI/CD, monitoring.  
-
----
 
 ## ❓ FAQ
 
