@@ -1,5 +1,3 @@
-[English version →](README-en.md)
-
 <h1 align="center">
   👋 Привет, я ReNothingg!
 </h1>
@@ -113,6 +111,6 @@
 
 ## 🌐 Localization
 
-* [Русский](#readme) | [English](#readme-1)
+* [Русский](README-ru.md) | [English](README.md))
 
 <p align="center">✨ Спасибо за визит! / Thanks for stopping by! ✨</p>
