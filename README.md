@@ -9,7 +9,7 @@
 
 ---
 
-## 🚀 Обо мне / About Me
+## 🚀 Обо мне
 
 * 🔭 Я разрабатываю веб‑приложения (HTML, CSS, JavaScript, Vue.js).
 * 🌱 Изучаю Unity и Unreal Engine для создания игр.
@@ -19,7 +19,7 @@
 
 ---
 
-## 📊 Статистика / Stats
+## 📊 Статистика
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=58a6ff&line=58a6ff&point=58a6ff&area=true&area_color=161b22&radius=8&hide_border=true" alt="GitHub Activity Graph" />
@@ -33,7 +33,7 @@
 
 ---
 
-## 💻 Технологии & Skills
+## 💻 Технологии
 
 |                  Языки                 |         Фреймворки & Инструменты        |
 | :------------------------------------: | :-------------------------------------: |
@@ -51,7 +51,7 @@
 
 ---
 
-## 🤖 AI & Инструменты / AI & Tools
+## 🤖 AI & Инструменты
 
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-74AA9C?style=for-the-badge\&logo=openai)
 ![Google Gemini](https://img.shields.io/badge/Google_Gemini-8E75B2?style=for-the-badge\&logo=google)
