@@ -4,26 +4,43 @@ import argparse
 import os
 
 BOARD_FILE = "board.json"
-README_FILE = "README.md"
+README_FILE = "README.md" # Убедитесь, что это имя вашего основного README файла
 PLAYER_SYMBOL = "X"
 AI_SYMBOL = "O"
 
 def load_board():
     if os.path.exists(BOARD_FILE):
-        with open(BOARD_FILE, 'r') as f:
-            return json.load(f)
-    return None
+        try:
+            with open(BOARD_FILE, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            print(f"Ошибка декодирования JSON в {BOARD_FILE}. Возвращаем состояние по умолчанию.")
+            return reset_game_state(load_stats=False) # Не пытаемся грузить статы, если файл битый
+    print(f"{BOARD_FILE} не найден. Создаем новое состояние.")
+    return reset_game_state(load_stats=False) # Не пытаемся грузить статы, если файла нет
 
 def save_board(state):
-    with open(BOARD_FILE, 'w') as f:
-        json.dump(state, f, indent=2)
+    with open(BOARD_FILE, 'w', encoding='utf-8') as f:
+        json.dump(state, f, indent=2, ensure_ascii=False)
 
-def reset_game_state():
-    # Сохраняем статистику
-    current_state = load_board()
-    player_wins = current_state.get("player_wins", 0) if current_state else 0
-    ai_wins = current_state.get("ai_wins", 0) if current_state else 0
-    draws = current_state.get("draws", 0) if current_state else 0
+def reset_game_state(load_stats=True):
+    player_wins = 0
+    ai_wins = 0
+    draws = 0
+
+    if load_stats: # Пытаемся сохранить статистику, если это не сброс из-за ошибки файла
+        current_state = None
+        if os.path.exists(BOARD_FILE):
+            try:
+                with open(BOARD_FILE, 'r', encoding='utf-8') as f:
+                    current_state = json.load(f)
+            except json.JSONDecodeError:
+                print("Не удалось загрузить статистику при сбросе из-за ошибки в board.json")
+        
+        if current_state:
+            player_wins = current_state.get("player_wins", 0)
+            ai_wins = current_state.get("ai_wins", 0)
+            draws = current_state.get("draws", 0)
     
     return {
         "board": [["", "", ""], ["", "", ""], ["", "", ""]],
@@ -35,12 +52,10 @@ def reset_game_state():
     }
 
 def check_winner(board, player):
-    # Проверка строк и столбцов
     for i in range(3):
         if all(board[i][j] == player for j in range(3)) or \
            all(board[j][i] == player for j in range(3)):
             return True
-    # Проверка диагоналей
     if all(board[i][i] == player for i in range(3)) or \
        all(board[i][2 - i] == player for i in range(3)):
         return True
@@ -59,114 +74,106 @@ def player_move(state, row, col):
         board[row][col] = PLAYER_SYMBOL
         if check_winner(board, PLAYER_SYMBOL):
             state["status"] = "Вы победили!"
-            state["message"] = "Поздравляю! Вы победили! Нажмите 'Начать/Сбросить игру' для новой партии."
+            state["message"] = "Поздравляю! 🎉 Вы победили! Нажмите 'Начать/Сбросить игру' для новой партии."
             state["player_wins"] = state.get("player_wins", 0) + 1
         elif is_draw(board):
             state["status"] = "Ничья"
-            state["message"] = "Ничья! Нажмите 'Начать/Сбросить игру' для новой партии."
+            state["message"] = "Ничья! 🤝 Нажмите 'Начать/Сбросить игру' для новой партии."
             state["draws"] = state.get("draws", 0) + 1
         else:
-            state["message"] = "Ход компьютера (O)..." # Временно, пока ИИ не сходил
-            # Сразу после хода игрока, если игра не окончена, вызываем ход ИИ
-            state = ai_move(state)
+            state["message"] = "Ход компьютера (O)..."
+            state = ai_move(state) # Ход ИИ сразу после игрока
     else:
         state["message"] = "Эта клетка уже занята. Попробуйте другую."
     return state
 
 def ai_move(state):
-    if state["status"] != "В игре": # Если игрок уже выиграл/ничья
+    if state["status"] != "В игре":
         return state
 
     board = state["board"]
     empty_cells = []
-    for r in range(3):
-        for c in range(3):
-            if board[r][c] == "":
-                empty_cells.append((r, c))
+    for r_idx, row_val in enumerate(board):
+        for c_idx, cell_val in enumerate(row_val):
+            if cell_val == "":
+                empty_cells.append((r_idx, c_idx))
 
-    if not empty_cells: # Это не должно случиться, если is_draw проверяется раньше
+    if not empty_cells: # На всякий случай, хотя is_draw должна была сработать раньше
         return state
 
-    # Простая стратегия ИИ:
+    # Стратегия ИИ:
     # 1. Выиграть, если возможно
     for r, c in empty_cells:
         board[r][c] = AI_SYMBOL
         if check_winner(board, AI_SYMBOL):
             state["status"] = "Компьютер победил"
-            state["message"] = "Компьютер победил. Нажмите 'Начать/Сбросить игру' для новой партии."
+            state["message"] = "Компьютер победил. 🤖 Попробуйте еще раз! Нажмите 'Начать/Сбросить игру'."
             state["ai_wins"] = state.get("ai_wins", 0) + 1
             return state
-        board[r][c] = "" # Откатить ход
+        board[r][c] = ""
 
-    # 2. Блокировать игрока, если он может выиграть следующим ходом
+    # 2. Блокировать игрока
     for r, c in empty_cells:
         board[r][c] = PLAYER_SYMBOL
         if check_winner(board, PLAYER_SYMBOL):
             board[r][c] = AI_SYMBOL # Блокирующий ход
-            if is_draw(board): # Проверка на ничью после хода ИИ
+            if is_draw(board):
                 state["status"] = "Ничья"
-                state["message"] = "Ничья! Нажмите 'Начать/Сбросить игру' для новой партии."
+                state["message"] = "Ничья! 🤝 Нажмите 'Начать/Сбросить игру' для новой партии."
                 state["draws"] = state.get("draws", 0) + 1
             else:
                  state["message"] = "Ваш ход (X). Кликните на свободную клетку."
             return state
-        board[r][c] = "" # Откатить ход
+        board[r][c] = ""
 
-    # 3. Занять центр, если свободен
+    # 3. Занять центр
     if (1, 1) in empty_cells:
-        r, c = 1, 1
-    # 4. Занять случайный угол, если свободен
+        r_ai, c_ai = 1, 1
+    # 4. Занять случайный угол
     else:
         corners = [(0,0), (0,2), (2,0), (2,2)]
+        random.shuffle(corners)
         available_corners = [cell for cell in corners if cell in empty_cells]
         if available_corners:
-            r, c = random.choice(available_corners)
+            r_ai, c_ai = available_corners[0]
         # 5. Занять случайную оставшуюся клетку
         else:
-            r, c = random.choice(empty_cells)
+            r_ai, c_ai = random.choice(empty_cells)
     
-    board[r][c] = AI_SYMBOL
-    if check_winner(board, AI_SYMBOL): # Перепроверка на всякий случай
+    board[r_ai][c_ai] = AI_SYMBOL
+    if check_winner(board, AI_SYMBOL):
         state["status"] = "Компьютер победил"
-        state["message"] = "Компьютер победил. Нажмите 'Начать/Сбросить игру' для новой партии."
+        state["message"] = "Компьютер победил. 🤖 Попробуйте еще раз! Нажмите 'Начать/Сбросить игру'."
         state["ai_wins"] = state.get("ai_wins", 0) + 1
     elif is_draw(board):
         state["status"] = "Ничья"
-        state["message"] = "Ничья! Нажмите 'Начать/Сбросить игру' для новой партии."
+        state["message"] = "Ничья! 🤝 Нажмите 'Начать/Сбросить игру' для новой партии."
         state["draws"] = state.get("draws", 0) + 1
     else:
         state["message"] = "Ваш ход (X). Кликните на свободную клетку."
     return state
 
-def generate_board_markdown(state):
+def generate_board_markdown(state, github_user_repo, workflow_file):
     board = state["board"]
     status = state["status"]
     message = state["message"]
     
-    # GitHub username and repo name (usually the same for profile READMEs)
-    # Важно: Замените 'renothingg' на ваше имя пользователя GitHub, если оно отличается от имени репозитория.
-    # Для профильных README репозиторий обычно называется так же, как и пользователь.
-    github_user_repo = "renothingg/renothingg" 
-    workflow_file = "tictactoe_game.yml"
-
     md = "<div align='center'>\n"
     md += "<table>\n"
     for r in range(3):
         md += "  <tr>\n"
         for c in range(3):
-            cell_content = board[r][c] if board[r][c] else "  " # Используем   для пустых, чтобы ячейки не схлопывались
-            cell_display = cell_content
-            if board[r][c] == "" and status == "В игре":
-                link = f"https://github.com/{github_user_repo}/actions/workflows/{workflow_file}/dispatches?ref=main&inputs[action]=move&inputs[row]={r}&inputs[col]={c}"
-                # Используем более крупный шрифт или эмодзи для кликабельной области
-                cell_display = f'<a href="{link}" style="text-decoration:none; color:inherit;">🕹️</a>'
-            elif board[r][c] == PLAYER_SYMBOL:
-                 cell_display = "❌" # X
-            elif board[r][c] == AI_SYMBOL:
-                 cell_display = "⭕" # O
-            else: # Если игра окончена, не делаем клетки кликабельными
-                 cell_display = f"{cell_content}"
+            cell_content = board[r][c]
+            cell_display = "  " # Для пустых ячеек по умолчанию
 
+            if cell_content == PLAYER_SYMBOL:
+                 cell_display = "❌"
+            elif cell_content == AI_SYMBOL:
+                 cell_display = "⭕"
+            elif status == "В игре": # Пустая клетка и игра идет - делаем кликабельной
+                link = f"https://github.com/{github_user_repo}/actions/workflows/{workflow_file}/dispatches?ref=main&inputs[action]=move&inputs[row]={r}&inputs[col]={c}"
+                cell_display = f'<a href="{link}" style="text-decoration:none; color:inherit;">🕹️</a>'
+            # Если клетка пустая, но игра не идет, остается   
 
             md += f'    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">{cell_display}</td>\n'
         md += "  </tr>\n"
@@ -178,24 +185,25 @@ def generate_board_markdown(state):
     return md
 
 def update_readme(game_markdown):
-    with open(README_FILE, 'r', encoding='utf-8') as f:
-        readme_content = f.readlines()
+    try:
+        with open(README_FILE, 'r', encoding='utf-8') as f:
+            readme_content = f.readlines()
+    except FileNotFoundError:
+        print(f"Ошибка: Файл {README_FILE} не найден.")
+        return False
 
     start_marker = "<!-- TICTACTOE_START -->\n"
     end_marker = "<!-- TICTACTOE_END -->\n"
 
-    if start_marker not in readme_content or end_marker not in readme_content:
-        print(f"Маркеры {start_marker.strip()} и/или {end_marker.strip()} не найдены в {README_FILE}")
-        # Если маркеров нет, можно просто дописать в конец или не обновлять
-        # Для простоты, если маркеров нет, мы не будем обновлять README.
-        # Вам нужно убедиться, что маркеры есть в вашем README.md.
+    try:
+        start_index = readme_content.index(start_marker)
+        end_index = readme_content.index(end_marker)
+    except ValueError:
+        print(f"Ошибка: Маркеры {start_marker.strip()} и/или {end_marker.strip()} не найдены в {README_FILE}")
         return False
 
-    start_index = readme_content.index(start_marker)
-    end_index = readme_content.index(end_marker)
-
     new_readme_content = readme_content[:start_index + 1]
-    new_readme_content.append(game_markdown + "\n")
+    new_readme_content.append(game_markdown + "\n") # Добавляем сам Markdown игры
     new_readme_content.extend(readme_content[end_index:])
 
     with open(README_FILE, 'w', encoding='utf-8') as f:
@@ -203,39 +211,61 @@ def update_readme(game_markdown):
     return True
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--action", help="Действие: 'move' или 'reset'", required=True)
-    parser.add_argument("--row", type=int, help="Ряд для хода (0-2)")
-    parser.add_argument("--col", type=int, help="Колонка для хода (0-2)")
+    parser = argparse.ArgumentParser(description="Игра Крестики-Нолики для GitHub README")
+    parser.add_argument("--action", help="Действие: 'move' или 'reset'", required=True, choices=['move', 'reset'])
+    
+    # Делаем row и col опциональными и обрабатываем их отсутствие или некорректные значения
+    parser.add_argument("--row", help="Ряд для хода (0-2)", default=None)
+    parser.add_argument("--col", help="Колонка для хода (0-2)", default=None)
+    
     args = parser.parse_args()
 
     current_state = load_board()
-    if not current_state: # Если файл board.json не существует или пуст
-        print("Файл board.json не найден или поврежден. Инициализация новой игры.")
-        current_state = reset_game_state()
-        # Не сохраняем сразу, даем действию обработать
-        # Если это не reset, а move, то игра не начнется корректно.
-        # Лучше, если action reset всегда вызывается первым.
+    # Имя репозитория и workflow для генерации ссылок
+    # Замените 'renothingg/renothingg' на ваше имя пользователя/репозитория, если оно другое
+    # Обычно для профильного README это ваш_логин/ваш_логин
+    GITHUB_USER_REPO = os.getenv('GITHUB_REPOSITORY', 'renothingg/renothingg') 
+    WORKFLOW_FILE = "tictactoe_game.yml" # Имя вашего workflow файла
+
+    parsed_row, parsed_col = None, None
 
     if args.action == "reset":
+        print("Действие: Сброс игры.")
         current_state = reset_game_state()
-        print("Игра сброшена.")
     elif args.action == "move":
-        if current_state["status"] != "В игре":
-            current_state["message"] = f"Игра уже окончена ({current_state['status']}). Нажмите 'Начать/Сбросить игру'."
-            print(f"Попытка хода в оконченной игре. Статус: {current_state['status']}")
-        elif args.row is not None and args.col is not None:
-            print(f"Ход игрока: строка {args.row}, колонка {args.col}")
-            current_state = player_move(current_state, args.row, args.col)
+        print(f"Действие: Ход. Получено row='{args.row}', col='{args.col}'")
+        if args.row is not None and args.col is not None:
+            try:
+                temp_row = int(args.row)
+                temp_col = int(args.col)
+                if 0 <= temp_row <= 2 and 0 <= temp_col <= 2:
+                    parsed_row = temp_row
+                    parsed_col = temp_col
+                else:
+                    current_state["message"] = "Ошибка: Значения для хода вне допустимого диапазона (0-2)."
+                    print(f"Ошибка: Некорректные значения для хода: row={temp_row}, col={temp_col}")
+            except ValueError:
+                current_state["message"] = "Ошибка: Значения для хода должны быть числами."
+                print(f"Ошибка: Не удалось преобразовать row ('{args.row}') или col ('{args.col}') в числа.")
+        
+        if parsed_row is not None and parsed_col is not None:
+            if current_state["status"] == "В игре":
+                print(f"Ход игрока: строка {parsed_row}, колонка {parsed_col}")
+                current_state = player_move(current_state, parsed_row, parsed_col)
+            else:
+                current_state["message"] = f"Игра уже окончена ({current_state['status']}). Нажмите 'Начать/Сбросить игру'."
+                print(f"Попытка хода в оконченной игре. Статус: {current_state['status']}")
         else:
-            current_state["message"] = "Ошибка: для хода не указаны строка и/или колонка."
-            print("Ошибка: для хода не указаны строка и/или колонка.")
-    
+            if current_state["status"] == "В игре": # Только если игра идет, сообщаем об ошибке хода
+                 current_state["message"] = "Ошибка: Для хода не были предоставлены корректные координаты."
+            print("Ошибка: Не удалось получить корректные координаты для хода.")
+            # Не меняем состояние игры, если ход невалидный, просто обновляем сообщение
+
     save_board(current_state)
-    print(f"Состояние сохранено: {current_state}")
+    print(f"Состояние сохранено: Статус='{current_state['status']}', Сообщение='{current_state['message']}'")
     
-    game_md = generate_board_markdown(current_state)
+    game_md = generate_board_markdown(current_state, GITHUB_USER_REPO, WORKFLOW_FILE)
     if update_readme(game_md):
         print(f"{README_FILE} обновлен.")
     else:
-        print(f"Не удалось обновить {README_FILE} из-за отсутствия маркеров.")
+        print(f"Не удалось обновить {README_FILE}.")
