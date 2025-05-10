@@ -30,18 +30,25 @@ jobs:
           python-version: '3.x'
 
       - name: Run game logic
+        shell: bash # Указываем оболочку явно
         run: |
-          CMD_ARGS="--action ${{ github.event.inputs.action }}"
+          echo "Action: ${{ github.event.inputs.action }}"
+          echo "Row: ${{ github.event.inputs.row }}"
+          echo "Col: ${{ github.event.inputs.col }}"
+
           if [ "${{ github.event.inputs.action }}" = "move" ]; then
-            # Убедимся, что row и col переданы и не пустые, если action=move
-            if [ -n "${{ github.event.inputs.row }}" ] && [ -n "${{ github.event.inputs.col }}" ]; then
-              CMD_ARGS="$CMD_ARGS --row ${{ github.event.inputs.row }} --col ${{ github.event.inputs.col }}"
-            else
-              echo "::error::Action is 'move' but row or col is missing/empty."
-              exit 1 # Завершаем с ошибкой, если для move нет row/col
+            # Для 'move' row и col должны быть предоставлены
+            if [ -z "${{ github.event.inputs.row }}" ] || [ -z "${{ github.event.inputs.col }}" ]; then
+              echo "::error::Action 'move' requires row and col inputs."
+              exit 1
             fi
+            python game.py --action "${{ github.event.inputs.action }}" --row "${{ github.event.inputs.row }}" --col "${{ github.event.inputs.col }}"
+          elif [ "${{ github.event.inputs.action }}" = "reset" ]; then
+            python game.py --action "${{ github.event.inputs.action }}"
+          else
+            echo "::error::Unknown action: ${{ github.event.inputs.action }}"
+            exit 1
           fi
-          python game.py $CMD_ARGS
 
       - name: Commit and push changes
         run: |
