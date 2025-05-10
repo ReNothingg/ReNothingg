@@ -96,8 +96,4 @@
 
 ---
 
-## 🌐 Localization
-
-* [Русский](README.md) | [English](README-en.md)
-
 <p align="center">✨ Спасибо за визит! / Thanks for stopping by! ✨</p>
