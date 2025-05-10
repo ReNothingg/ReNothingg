@@ -31,10 +31,17 @@ jobs:
 
       - name: Run game logic
         run: |
-          python game.py --action ${{ github.event.inputs.action }} --row ${{ github.event.inputs.row }} --col ${{ github.event.inputs.col }}
-        # Если передаем пустые row/col, скрипт должен их игнорировать для reset
-        # В Python argparse пустые значения для type=int вызовут ошибку, если они required.
-        # Они не required, так что должно быть нормально, если они не переданы для reset.
+          CMD_ARGS="--action ${{ github.event.inputs.action }}"
+          if [ "${{ github.event.inputs.action }}" = "move" ]; then
+            # Убедимся, что row и col переданы и не пустые, если action=move
+            if [ -n "${{ github.event.inputs.row }}" ] && [ -n "${{ github.event.inputs.col }}" ]; then
+              CMD_ARGS="$CMD_ARGS --row ${{ github.event.inputs.row }} --col ${{ github.event.inputs.col }}"
+            else
+              echo "::error::Action is 'move' but row or col is missing/empty."
+              exit 1 # Завершаем с ошибкой, если для move нет row/col
+            fi
+          fi
+          python game.py $CMD_ARGS
 
       - name: Commit and push changes
         run: |
