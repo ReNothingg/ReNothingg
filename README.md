@@ -1,3 +1,31 @@
+## 🎮 Крестики-нолики
+
+<!-- TICTACTOE_START -->
+<!-- Содержимое игры будет автоматически вставлено сюда GitHub Action -->
+<div align='center'>
+<table>
+  <tr>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+  </tr>
+  <tr>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+    <td align="center" valign="middle" width="50" height="50" style="font-size:24px; border: 1px solid #555;">  </td>
+  </tr>
+</table>
+<p>Нажмите 'Начать/Сбросить игру' ниже, чтобы инициализировать поле.</p>
+<p><b>Статистика:</b> Игрок: 0 - ИИ: 0 - Ничьи: 0</p>
+</div>
+<!-- TICTACTOE_END -->
+
+
 <h1 align="center">
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=900&size=40&pause=1000&color=00F716&background=18181800&center=true&vCenter=true&random=true&width=500&lines=Welcome+to+my+GitHub" alt="Typing SVG" /></a>
 </h1>
