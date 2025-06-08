@@ -103,4 +103,5 @@
 
 * [Русский](README.md) | [English](README-en.md)
 
+![Render1](render1.png)
 <p align="center">✨ Спасибо за визит! / Thanks for stopping by! ✨</p>
