@@ -10,16 +10,20 @@
 ---
 
 ## 🚀 About Me
+Hi! I’m a calm person — most of the time, at least.  
+I love diving into complex topics — from AI and GPUs to how modern phones work. Passionate about coding and playing guitar. Favorite games? *Detroit: Become Human* and *The Stanley Parable*.
 
-* 🔭 I build web applications (HTML, CSS, JavaScript, Vue.js).
+I'm currently studying math and physics, aiming to grow not just academically but also personally. Working on living without aggression or insults, staying mindful and calm. Basically — on a path to upgrading myself. :)
+
+* 🔭 I build web apps (HTML, CSS, JavaScript, Vue.js).
 * 🌱 Learning Unity and Unreal Engine for game development.
-* 👯 Looking to collaborate on interesting projects.
+* 👯 Open to collaborating on cool projects.
 * 📫 Contact: [Telegram](https://t.me/ReNothingg) / [renothingg@gmail.com](mailto:renothingg@gmail.com)
-* ⚡ Fun fact: My most used shortcut is Ctrl+Z. Because you don't always have to live with the consequences of your decisions.
+* ⚡ Fun fact: My most used shortcut is Ctrl+Z. Because sometimes, you really *can* undo your mistakes.
 
 ---
 
-## 📊 Stats
+## 📊 GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=58a6ff&line=58a6ff&point=58a6ff&area=true&area_color=161b22&radius=8&hide_border=true" alt="GitHub Activity Graph" />
@@ -32,12 +36,12 @@
 
 ---
 
-## 💻 Technologies & Skills
+## 💻 Technologies
 
-|               Languages               |      Frameworks & Tools      |
-| :-----------------------------------: | :---------------------------: |
+|               Languages               |        Frameworks & Tools         |
+| :----------------------------------: | :-------------------------------: |
 | HTML, CSS, JavaScript, Python, C++, C# | Vue.js, Bootstrap, Unity, Unreal Engine |
-|       SQL, Bash, Docker, Git          | Figma, Postman, Windows Terminal, Linux |
+|        SQL, Bash, Docker, Git        | Figma, Postman, Windows Terminal, Linux |
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3)
@@ -60,44 +64,44 @@
 
 ---
 
-
 ## ❓ FAQ
 
 <details>
   <summary>How old are you?</summary>
-  Old enough to know that while(true) is a bad idea, but not old enough to stop using it.
+  Old enough to know `while(true)` is a bad idea — but still not old enough to stop using it.
 </details>
 
 <details>
-  <summary>What is your gender?</summary>
-  There’s an entrance and an exit door. That means I’m… probably bidirectional. The question is open, but functional!
+  <summary>What's your gender?</summary>
+  I have an entrance and an exit — so I guess I'm... double-sided? The question is open, but I'm functional!
 </details>
 
 <details>
-  <summary>How long have you been programming?</summary>
-  Since 2015. Back then, HTML didn’t pretend to be a real language, and I still believed in friendship between front-end and back-end.
+  <summary>When did you start coding?</summary>
+  Since 2015. Things were simpler back then — HTML didn’t pretend to be a full-fledged language, and I still believed frontend and backend could be friends.
 </details>
 
 <details>
-  <summary>What’s your favorite game engine?</summary>
-  The one where the scene doesn’t crash because of a forgotten collider. But in general—Unity, until it starts charging for every character jump.
+  <summary>Favorite game engine?</summary>
+  The one where the scene doesn’t collapse because of a missing collider. But generally — Unity (at least before it started charging for every character jump).
 </details>
 
 <details>
-  <summary>What’s your favorite programming language?</summary>
-  C#—because I love it when code is like IKEA: everything in place, convenient and beautiful, until you start assembling in production.  
-  I also respect Python a bit—it’s like slippers: comfy and warm… but you wouldn’t wear them outside.
+  <summary>Favorite programming language?</summary>
+  C# — it’s like IKEA: everything’s in place, nice and tidy… until you try to assemble it in production.  
+  Python also gets some love — it's like slippers: comfy, warm… but not ideal for the street.
 </details>
 
 <details>
-  <summary>Can I work with you?</summary>
-  Of course! Just pass one test first: set up Git without Google and survive a code review by myself.
+  <summary>Can I collaborate with you?</summary>
+  Absolutely! Just pass the trial first: configure Git without Googling, and survive code review — from your past self.
 </details>
 
 ---
 
 ## 🌐 Localization
 
-* [Русский](README.md) | [English](README-en.md)
+* [Русский](README.md) | [English](lang\README-en.md)
 
-<p align="center">✨ Thanks for stopping by! ✨</p>
+![Render1](render1.png)
+<p align="center">✨ Thanks for stopping by! / Спасибо за визит! ✨</p>
