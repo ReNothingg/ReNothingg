@@ -522,7 +522,10 @@ section:nth-child(odd) .email-link { background-color: var(--background-color); 
 section:not(:nth-child(odd)) .email-link:hover { background-color: var(--secondary-accent); }
 section:nth-child(odd) .email-link:hover { background-color: var(--primary-accent); }
 
-.social-links { margin-top: 20px; }
+.social-links {
+  gap: 1rem;
+  font-size: 32px;
+}
 .social-links a { margin: 0 12px; display: inline-block; color: var(--tertiary-accent); transition: color var(--transition-speed) ease, transform var(--transition-speed) ease; }
 .social-links a svg { width: 26px; height: 26px; vertical-align: middle; }
 .social-links a:hover { color: var(--text-color); transform: scale(1.15); }
