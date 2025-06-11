@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function escapeHtml(unsafe) {
         if (unsafe === null || typeof unsafe === 'undefined') return '';
         return unsafe.toString()
-             .replace(/&/g, "&").replace(/</g, "<")
+             .replace(/&/g, "&")
+             .replace(/</g, "<")
+             .replace(/>/g, ">")
+             .replace(/"/g, "\"")
              .replace(/'/g, "'");
     }
 
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        if (scrollPosition < sections[0].offsetTop - headerHeight - 50) {
+        if (sections.length > 0 && scrollPosition < sections[0].offsetTop - headerHeight - 50) {
             newActiveSectionTitle = "";
             newActiveSectionId = null;
         }
@@ -54,27 +57,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${newActiveSectionId}`) {
+            if (newActiveSectionId && link.getAttribute('href') === `#${newActiveSectionId}`) {
                 link.classList.add('active');
             }
         });
     }
 
+    
+    let observer; 
+
+    function observeAnimatedElements() {
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+        if (observer) {
+            observer.disconnect();
+        }
+
+        if (!animatedElements.length) {
+            return;
+        }
+
+        observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = parseFloat(entry.target.dataset.animationDelay || entry.target.style.transitionDelay) * 1000 || 0;
+                    setTimeout(() => {
+                        entry.target.classList.add('is-visible');
+                    }, delay);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+    }
+
+    observeAnimatedElements();
+
+
+
     if (header && sections.length > 0) {
         calculateHeaderHeight();
         window.addEventListener('resize', calculateHeaderHeight);
         window.addEventListener('scroll', updateStickyHeaderAndNav, { passive: true });
-        updateStickyHeaderAndNav();
+        updateStickyHeaderAndNav(); 
     }
 
     const githubUsername = "ReNothingg";
     const reposContainer = document.getElementById('github-repos-container');
     const viewAllGithubLink = document.getElementById('view-all-github-link');
-    const CACHE_KEY_REPOS = 'github_repos_data_ReNothingg';
-    const CACHE_KEY_TIMESTAMP = 'github_repos_timestamp_ReNothingg';
+    const CACHE_KEY_REPOS = `github_repos_data_${githubUsername}`; 
+    const CACHE_KEY_TIMESTAMP = `github_repos_timestamp_${githubUsername}`;
     const CACHE_DURATION_MS = 3 * 60 * 60 * 1000;
+
     if (viewAllGithubLink && githubUsername && githubUsername !== "ВАШ_GITHUB_USERNAME") {
-        viewAllGithubLink.href = `https://github.com/${githubUsername}?tab=repositories`;
+        viewAllGithubLink.href = `https:
     } else if (viewAllGithubLink) {
         viewAllGithubLink.style.display = 'none';
     }
@@ -111,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         repos.forEach((repo, index) => {
             const repoCard = document.createElement('a');
             repoCard.classList.add('repo-card', 'animate-on-scroll', 'fade-in-up');
-            repoCard.style.transitionDelay = `${index * 0.05}s`;
+            repoCard.style.transitionDelay = `${index * 0.05}s`; 
             repoCard.href = repo.html_url;
             repoCard.target = "_blank";
             repoCard.setAttribute('aria-label', `Репозиторий ${escapeHtml(repo.name)}`);
@@ -122,20 +161,38 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="repo-description">${repo.description ? escapeHtml(repo.description.substring(0, 90)) + (repo.description.length > 90 ? '...' : '') : '<i>Описание отсутствует.</i>'}</p>
                 </div>
                 <div class="repo-meta">
-                    ${repo.language ? `<span class="repo-language"><span class="language-color-dot"></span> ${escapeHtml(repo.language)}</span>` : '<span class="repo-language"></span>'}
+                    ${repo.language ? `<span class="repo-language"><span class="language-color-dot" style="background-color: ${getLanguageColor(repo.language)};"></span> ${escapeHtml(repo.language)}</span>` : '<span class="repo-language"></span>'}
                     <span class="repo-stars">${repo.stargazers_count}</span>
                     <span class="repo-forks">Forks: ${repo.forks_count}</span>
                 </div>
             `;
             reposContainer.appendChild(repoCard);
         });
-        observeAnimatedElements();
+        observeAnimatedElements(); 
     }
     
+    
+    function getLanguageColor(language) {
+        const colors = {
+            "JavaScript": "#f1e05a",
+            "HTML": "#e34c26",
+            "CSS": "#563d7c",
+            "Python": "#3572A5",
+            "Java": "#b07219",
+            "TypeScript": "#3178c6",
+            "Shell": "#89e051",
+            "C#": "#178600",
+            "C++": "#f34b7d",
+            "PHP": "#4F5D95",
+            
+        };
+        return colors[language] || '#cccccc'; 
+    }
+
     function renderError(message) {
         if (reposContainer) {
             reposContainer.innerHTML = `<p class="error-text animate-on-scroll fade-in">${escapeHtml(message)}</p>`;
-            observeAnimatedElements();
+            observeAnimatedElements(); 
         }
     }
 
@@ -158,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error("Ошибка парсинга кешированных данных:", e);
                 localStorage.removeItem(CACHE_KEY_REPOS);
                 localStorage.removeItem(CACHE_KEY_TIMESTAMP);
-                await fetchFreshGitHubRepos();
+                await fetchFreshGitHubRepos(); 
             }
             return;
         }
@@ -168,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function fetchFreshGitHubRepos() {
-        const apiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=pushed&direction=desc&per_page=6`;
+        const apiUrl = `https:
         try {
             const response = await fetch(apiUrl);
             if (!response.ok) {
@@ -183,38 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
             renderRepos(repos);
         } catch (error) {
             console.error("Ошибка загрузки GitHub репозиториев:", error);
-            renderError(`Не удалось загрузить репозитории. (${error.message})`);
+            renderError(`Не удалось загрузить репозитории. (${escapeHtml(error.message)})`);
         }
     }
 
     if (reposContainer) {
         fetchGitHubRepos();
     }
-
-    let observer;
-    function observeAnimatedElements() {
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        if (!animatedElements.length) return;
-
-        if (observer) observer.disconnect(); 
-
-        observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const delay = parseFloat(entry.target.dataset.animationDelay) * 1000 || 0;
-                    setTimeout(() => {
-                        entry.target.classList.add('is-visible');
-                    }, delay);
-                    obs.unobserve(entry.target); 
-                }
-            });
-        }, { threshold: 0.1 }); 
-
-        animatedElements.forEach(el => {
-            observer.observe(el);
-        });
-    }
-    observeAnimatedElements();
 
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     if (scrollToTopBtn) {
@@ -233,8 +265,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    const heroCanvas = document.getElementById('hero-canvas');
-    if (heroCanvas) {
+    
+    const heroCanvasElement = document.getElementById('hero-canvas');
+    if (heroCanvasElement && heroCanvasElement instanceof HTMLCanvasElement) {
+        const heroCanvas = heroCanvasElement; 
         const ctx = heroCanvas.getContext('2d');
         let particlesArray;
 
@@ -242,10 +276,15 @@ document.addEventListener('DOMContentLoaded', function() {
             heroCanvas.width = heroCanvas.offsetWidth;
             heroCanvas.height = heroCanvas.offsetHeight;
         }
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        
+        const mouse = { x: null, y: null, radius: 0 };
 
-        const mouse = { x: null, y: null, radius: (heroCanvas.height / 120) * (heroCanvas.width / 120) };
+        function updateMouseRadius() {
+            mouse.radius = (heroCanvas.height / 100) * (heroCanvas.width / 100); 
+            if (mouse.radius < 50) mouse.radius = 50; 
+            if (mouse.radius > 200) mouse.radius = 200; 
+        }
+
 
         heroCanvas.addEventListener('mousemove', event => {
             mouse.x = event.offsetX;
@@ -256,14 +295,13 @@ document.addEventListener('DOMContentLoaded', function() {
             mouse.y = null;
         });
 
-
         class Particle {
             constructor(x, y, directionX, directionY, size, color) {
                 this.x = x; this.y = y;
+                this.baseX = this.x; this.baseY = this.y; 
                 this.directionX = directionX; this.directionY = directionY;
                 this.size = size; this.color = color;
-                this.baseX = this.x; this.baseY = this.y;
-                this.density = (Math.random() * 30) + 1;
+                this.density = (Math.random() * 30) + 10; 
             }
             draw() {
                 ctx.beginPath();
@@ -272,40 +310,55 @@ document.addEventListener('DOMContentLoaded', function() {
                 ctx.fill();
             }
             update() {
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let maxDistance = mouse.radius;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density * 0.6;
-                let directionY = forceDirectionY * force * this.density * 0.6;
+                if (mouse.x !== null && mouse.y !== null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxDistance = mouse.radius;
+                    
+                    let force = (maxDistance - distance) / maxDistance; 
+                    if (force < 0) force = 0;
 
-                if (distance < mouse.radius && mouse.x !== null) {
-                    this.x -= directionX;
-                    this.y -= directionY;
+                    let moveX = forceDirectionX * force * this.density * 0.4;
+                    let moveY = forceDirectionY * force * this.density * 0.4;
+
+                    if (distance < mouse.radius) {
+                        this.x -= moveX;
+                        this.y -= moveY;
+                    } else {
+                        if (this.x !== this.baseX) {
+                            let returnDx = this.x - this.baseX;
+                            this.x -= returnDx / 20;
+                        }
+                        if (this.y !== this.baseY) {
+                            let returnDy = this.y - this.baseY;
+                            this.y -= returnDy / 20;
+                        }
+                    }
                 } else {
-                    if (this.x !== this.baseX) {
-                        let dxBase = this.x - this.baseX;
-                        this.x -= dxBase / 20;
-                    }
-                    if (this.y !== this.baseY) {
-                        let dyBase = this.y - this.baseY;
-                        this.y -= dyBase / 20;
-                    }
-                    this.x += this.directionX * 0.1;
-                    this.y += this.directionY * 0.1;
+                    if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 20;
+                    if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 20;
                 }
 
-                if (this.x + this.size > heroCanvas.width || this.x - this.size < 0) this.directionX = -this.directionX;
-                if (this.y + this.size > heroCanvas.height || this.y - this.size < 0) this.directionY = -this.directionY;
-                
-                if (Math.random() < 0.05) {
-                     this.x += (Math.random() - 0.5) * 0.5;
-                     this.y += (Math.random() - 0.5) * 0.5;
+                if (Math.abs(this.x - this.baseX) > 1 || Math.abs(this.y - this.baseY) > 1) {
+                     this.x += this.directionX * 0.05;
+                     this.y += this.directionY * 0.05;
                 }
 
+
+                if (this.x + this.size > heroCanvas.width || this.x - this.size < 0) {
+                    this.directionX = -this.directionX;
+                    if (this.x + this.size > heroCanvas.width) this.x = heroCanvas.width - this.size;
+                    if (this.x - this.size < 0) this.x = this.size;
+                }
+                if (this.y + this.size > heroCanvas.height || this.y - this.size < 0) {
+                    this.directionY = -this.directionY;
+                    if (this.y + this.size > heroCanvas.height) this.y = heroCanvas.height - this.size;
+                    if (this.y - this.size < 0) this.y = this.size;
+                }
+        
 
                 this.draw();
             }
@@ -313,16 +366,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function initParticles() {
             particlesArray = [];
-            let numberOfParticles = (heroCanvas.height * heroCanvas.width) / 15000;
-            if (numberOfParticles > 100) numberOfParticles = 100;
+            let numberOfParticles = (heroCanvas.height * heroCanvas.width) / 12000;
+            if (numberOfParticles > 150) numberOfParticles = 150;
+            if (numberOfParticles < 30) numberOfParticles = 30; 
 
             for (let i = 0; i < numberOfParticles; i++) {
-                let size = (Math.random() * 1.5) + 0.5;
+                let size = (Math.random() * 1.8) + 0.5;
                 let x = (Math.random() * ((heroCanvas.width - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((heroCanvas.height - size * 2) - (size * 2)) + size * 2);
-                let directionX = (Math.random() * 0.4) - 0.2;
-                let directionY = (Math.random() * 0.4) - 0.2;
-                let color = 'rgba(200,200,200,0.6)';
+                let directionX = (Math.random() * 0.2) - 0.1;
+                let directionY = (Math.random() * 0.2) - 0.1;
+                let color = 'rgba(200,200,200,0.5)'; 
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
@@ -335,16 +389,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        initParticles();
-        animateParticles();
+        resizeCanvas(); 
+        updateMouseRadius();
+        initParticles(); 
+        animateParticles(); 
 
         let resizeTimer;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 resizeCanvas(); 
-                initParticles();
+                updateMouseRadius();
+                initParticles(); 
             }, 250);
         });
-    }
+
+    } else if (heroCanvasElement) { 
+        console.warn("Элемент с id 'hero-canvas' найден, но это не <canvas>. Анимация частиц не будет отображена.");
+    } 
+
 });
