@@ -3,77 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blender Портфолио [Твое Имя/Никнейм]</title>
+    <title>Blender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="parallax-bg-container">
-        <div class="stars-bg parallax-layer" data-speed="0.1"></div>
-        <div class="twinkling-bg parallax-layer" data-speed="0.3"></div>
-        <div class="clouds-bg parallax-layer" data-speed="0.5"></div>
-    </div>
-
-    <header class="site-header">
-        <h1>Галерея Blender Рендеров</h1>
-        <p>Исследуй миры, созданные в Blender</p>
+    <header>
+        <h1>Портфолио Blender</h1>
     </header>
-
-    <section class="favorite-work-section" id="favoriteWorkSection">
-        <!-- Любимая работа будет вставлена сюда через JS -->
-    </section>
-
-    <nav class="filter-nav" id="filterNav">
-        <h2>Категории:</h2>
-        <button class="filter-btn active" data-filter="all">Все работы</button>
-        <button class="filter-btn" data-filter="final_photo">Готовые Фото</button>
-        <button class="filter-btn" data-filter="final_video">Готовые Видео</button>
-        <button class="filter-btn" data-filter="test_photo">Тесты Фото</button>
-        <button class="filter-btn" data-filter="test_video">Тесты Видео</button>
-    </nav>
-
-    <main class="gallery-container">
-        <!-- Рендеры будут добавлены сюда через JavaScript -->
+    <main>
+        <div id="gallery-container" class="gallery-container">
+        </div>
     </main>
-
-    <div class="modal" id="renderModal">
-        <div class="modal-content">
-            <span class="close-button">×</span>
-            <div class="modal-main-content">
-                <div class="modal-media-container">
-                    <img src="" alt="Полный размер рендера" id="modalImage" style="display:none;">
-                    <video src="" id="modalVideo" style="display:none;" controls playsinline></video>
-                </div>
-                <h2 id="modalTitle"></h2>
-                <p id="modalDescription"></p>
-                <a href="" download id="modalDownloadLink" class="download-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 15.586l-4.293-4.293a1 1 0 00-1.414 1.414l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414L12 15.586zM12 3a1 1 0 00-1 1v9.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L13 13.586V4a1 1 0 00-1-1zM4 19a1 1 0 001 1h14a1 1 0 001-1v-3a1 1 0 10-2 0v2H6v-2a1 1 0 10-2 0v3z"/></svg>
-                    Скачать
-                </a>
-            </div>
-            <div class="modal-bts-section" id="modalBtsSection" style="display:none;">
-                <h3>За кулисами:</h3>
-                <div class="bts-gallery" id="btsGallery">
-                    <!-- BTS контент будет здесь -->
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="site-footer-bottom">
-        <div class="about-me-section" id="aboutMe">
-            <h3>Обо мне</h3>
-            <p>[Здесь твое короткое описание. Расскажи о своей страсти к Blender, опыте или целях.]</p>
-            <div class="social-links">
-                <a href="#" target="_blank" title="ArtStation">ArtStation</a>
-                <a href="#" target="_blank" title="Instagram">Instagram</a>
-                <a href="#" target="_blank" title="Ваш сайт/блог">Мой Блог</a>
-                <!-- Добавь свои ссылки -->
-            </div>
-        </div>
-        <p>© <span id="currentYear"></span> [Твое Имя/Никнейм]. Все права защищены.</p>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
