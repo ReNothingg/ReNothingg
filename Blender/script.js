@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightboxResolution = document.getElementById('lightbox-resolution');
     const lightboxFilesize = document.getElementById('lightbox-filesize');
     const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxDownloadButton = document.getElementById('lightbox-download-button');
 
     if (imageFiles.length === 0) {
         const message = document.createElement('p');
@@ -53,6 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxResolution.textContent = 'Разрешение: загрузка...';
         lightboxFilesize.textContent = 'Размер: загрузка...';
         lightboxMediaContainer.innerHTML = '';
+
+        lightboxDownloadButton.href = filePath;
+        lightboxDownloadButton.download = fileName;
 
         const extension = getFileExtension(fileName);
         let mediaElement;
@@ -91,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             lightboxMediaContainer.textContent = 'Неподдерживаемый тип файла.';
             lightboxResolution.textContent = '';
             lightboxFilesize.textContent = '';
+            lightboxDownloadButton.style.display = 'none'; 
             lightbox.classList.add('show');
             document.body.classList.add('lightbox-open');
             return;
@@ -98,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mediaElement.src = filePath;
         lightboxMediaContainer.appendChild(mediaElement);
+        lightboxDownloadButton.style.display = 'inline-block'; 
 
         fetch(filePath)
             .then(response => {
@@ -135,6 +141,8 @@ document.addEventListener('DOMContentLoaded', () => {
             video.load();
         }
         lightboxMediaContainer.innerHTML = '';
+        lightboxDownloadButton.href = '#'; 
+        lightboxDownloadButton.removeAttribute('download');
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
@@ -155,6 +163,9 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryItem.classList.add('gallery-item');
         galleryItem.style.animationDelay = `${index * 0.1}s`;
 
+        const mediaWrapper = document.createElement('div');
+        mediaWrapper.classList.add('gallery-item-media-wrapper');
+
         const filePath = `${renderFolderPath}${fileName}`;
         const extension = getFileExtension(fileName);
         let thumbMediaElement;
@@ -166,43 +177,46 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbMediaElement = document.createElement('video');
             thumbMediaElement.muted = true;
             thumbMediaElement.preload = "metadata";
-            thumbMediaElement.setAttribute('playsinline', ''); // Для лучшей работы на iOS
+            thumbMediaElement.setAttribute('playsinline', '');
         } else {
             const placeholder = document.createElement('div');
             placeholder.textContent = `.${extension}`;
+            placeholder.style.width = '100%';
+            placeholder.style.height = '100%';
             placeholder.style.display = 'flex';
             placeholder.style.alignItems = 'center';
             placeholder.style.justifyContent = 'center';
-            placeholder.style.height = '100%';
-            placeholder.style.backgroundColor = 'var(--tertiary-accent)';
+            placeholder.style.color = 'var(--light-accent)';
+            placeholder.style.fontSize = '1.2rem';
             thumbMediaElement = placeholder;
         }
         
         if (thumbMediaElement.tagName === 'IMG' || thumbMediaElement.tagName === 'VIDEO') {
-            thumbMediaElement.src = filePath;
+            thumbMediaElement.src = filePath; 
             thumbMediaElement.onerror = () => {
                 const errorPlaceholder = document.createElement('div');
+                errorPlaceholder.textContent = `Ошибка: .${extension}`;
+                errorPlaceholder.style.width = '100%';
+                errorPlaceholder.style.height = '100%';
                 errorPlaceholder.style.display = 'flex';
                 errorPlaceholder.style.alignItems = 'center';
                 errorPlaceholder.style.justifyContent = 'center';
-                errorPlaceholder.style.height = '100%';
-                errorPlaceholder.style.backgroundColor = 'var(--tertiary-accent)';
                 errorPlaceholder.style.color = 'var(--light-accent)';
                 errorPlaceholder.style.fontSize = '0.9rem';
-                errorPlaceholder.textContent = `Ошибка: .${extension}`;
                 
-                if (thumbMediaElement.parentNode) {
-                    thumbMediaElement.parentNode.replaceChild(errorPlaceholder, thumbMediaElement);
-                }
+                mediaWrapper.innerHTML = ''; 
+                mediaWrapper.appendChild(errorPlaceholder);
             };
         }
+        
+        mediaWrapper.appendChild(thumbMediaElement);
+        galleryItem.appendChild(mediaWrapper);
 
         const fileNamePara = document.createElement('p');
         fileNamePara.classList.add('filename');
         fileNamePara.textContent = fileName;
-
-        galleryItem.appendChild(thumbMediaElement);
         galleryItem.appendChild(fileNamePara);
+
         galleryContainer.appendChild(galleryItem);
 
         galleryItem.addEventListener('click', () => {

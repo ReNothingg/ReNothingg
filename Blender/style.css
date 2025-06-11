@@ -64,6 +64,8 @@ header h1 {
     transform: translateY(20px);
     animation: fadeInUpItem var(--animation-duration) ease-out forwards;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .gallery-item:hover {
@@ -72,19 +74,26 @@ header h1 {
     border-color: var(--highlight-border);
 }
 
-.gallery-item img,
-.gallery-item video {
+.gallery-item-media-wrapper {
     width: 100%;
-    height: auto;
-    display: block;
     aspect-ratio: 16 / 9;
-    object-fit: cover;
+    overflow: hidden;
+    background-color: var(--secondary-accent);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+.gallery-item-media-wrapper img,
+.gallery-item-media-wrapper video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
     transition: transform var(--transition-speed) ease-out;
 }
 
-.gallery-item:hover img,
-.gallery-item:hover video {
+.gallery-item:hover .gallery-item-media-wrapper img,
+.gallery-item:hover .gallery-item-media-wrapper video {
     transform: scale(1.05);
 }
 
@@ -96,6 +105,7 @@ header h1 {
     background-color: var(--secondary-accent);
     word-break: break-all;
     transition: background-color var(--transition-speed) ease-out;
+    margin-top: auto;
 }
 
 .gallery-item:hover .filename {
@@ -145,6 +155,7 @@ header h1 {
     font-size: 35px;
     font-weight: bold;
     transition: color var(--transition-speed) ease;
+    z-index: 1;
 }
 
 .lightbox-close:hover,
@@ -154,31 +165,56 @@ header h1 {
     cursor: pointer;
 }
 
-.lightbox-info {
+.lightbox-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0 15px;
+    padding-bottom: 15px;
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 15px;
-    font-size: 0.9rem;
-    color: var(--light-accent);
     flex-wrap: wrap;
 }
 
-.lightbox-info span {
+.lightbox-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    color: var(--light-accent);
     margin-right: 15px;
-    margin-bottom: 5px;
+}
+
+.lightbox-info span {
+    margin-bottom: 4px;
 }
 .lightbox-info span:last-child {
-    margin-right: 0;
+    margin-bottom: 0;
 }
+
+.lightbox-download-btn {
+    background-color: var(--tertiary-accent);
+    color: var(--text-color);
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: var(--global-radius);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.lightbox-download-btn:hover {
+    background-color: var(--highlight-border);
+    border-color: var(--light-accent);
+}
+
 
 #lightbox-media-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 75vh;
+    max-height: 70vh;
+    min-height: 200px;
 }
 
 #lightbox-media-container img,
@@ -240,12 +276,19 @@ header h1 {
         width: 95%;
         padding: 15px;
     }
-    .lightbox-info {
+    .lightbox-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    .lightbox-info span {
+    .lightbox-info {
         margin-right: 0;
-        margin-bottom: 8px;
+        margin-bottom: 10px;
+    }
+    .lightbox-download-btn {
+        align-self: stretch;
+        text-align: center;
+    }
+    #lightbox-media-container {
+        max-height: 65vh;
     }
 }

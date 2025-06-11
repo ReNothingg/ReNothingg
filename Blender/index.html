@@ -6,7 +6,7 @@
     <title>Blender</title>
     <link rel="icon" href="../icon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
     <header>
@@ -20,10 +20,13 @@
     <div id="lightbox" class="lightbox">
         <div class="lightbox-content">
             <span class="lightbox-close">×</span>
-            <div class="lightbox-info">
-                <span id="lightbox-filename"></span>
-                <span id="lightbox-resolution"></span>
-                <span id="lightbox-filesize"></span>
+            <div class="lightbox-header">
+                <div class="lightbox-info">
+                    <span id="lightbox-filename"></span>
+                    <span id="lightbox-resolution"></span>
+                    <span id="lightbox-filesize"></span>
+                </div>
+                <a href="#" id="lightbox-download-button" class="lightbox-download-btn" download>Скачать</a>
             </div>
             <div id="lightbox-media-container">
             </div>
