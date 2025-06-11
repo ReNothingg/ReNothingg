@@ -461,6 +461,53 @@ section:nth-child(odd) .game-card {
     transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, transform var(--transition-speed) ease;
     display: inline-block;
 }
+.github-contribution-graph {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: var(--global-radius);
+    background-color: var(--primary-accent);
+}
+
+section:nth-child(odd) .github-contribution-graph {
+     background-color: var(--background-color);
+}
+
+
+.github-contribution-graph h4 {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.github-contribution-graph img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    background-color: #FFF;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.github-contribution-graph .graph-footnote {
+    font-size: 0.8em;
+    color: var(--tertiary-accent);
+    margin-top: 20px;
+}
+.github-contribution-graph .graph-footnote a {
+    color: var(--light-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.github-contribution-graph .graph-footnote a:hover {
+    color: var(--text-color);
+}
 section:nth-child(odd) .github-profile-link a {
     background-color: var(--background-color);
 }
@@ -472,6 +519,7 @@ section:nth-child(odd) .github-profile-link a {
 section:nth-child(odd) .github-profile-link a:hover {
      background-color: var(--primary-accent);
 }
+
 
 
 #news .news-list {
