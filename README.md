@@ -78,6 +78,7 @@
 ![Claude](https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic)
 ![DeepSeek](https://img.shields.io/badge/DeepSeek-0066FF?style=for-the-badge&logo=deepseek)
 ![Grok](https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=grok)
+![Grok](https://img.shields.io/badge/ReMind-FFFFFF?style=for-the-badge&logo=ReMind)
 
 ---
 
