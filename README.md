@@ -78,23 +78,14 @@
 ![Claude](https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=anthropic)
 ![DeepSeek](https://img.shields.io/badge/DeepSeek-0066FF?style=for-the-badge&logo=deepseek)
 ![Grok](https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=grok)
+![Grok](https://img.shields.io/badge/ReMind-FFFFFF?style=for-the-badge&logo=ReMind)
 
 ---
 
 ## ❓ FAQ
 
 <details>
-  <summary><strong>Сколько тебе лет?</strong></summary>
-  Достаточно, чтобы знать, что `while(true)` — плохая идея. Но недостаточно, чтобы перестать её использовать.
-</details>
-
-<details>
-  <summary><strong>Какой у тебя пол?</strong></summary>
-  Есть входная дверь, есть выходная. Значит, я двусторонний! Вопрос открыт, но функционален :)
-</details>
-
-<details>
-  <summary><strong>С какого возраста ты программируешь?</strong></summary>
+  <summary><strong>С какого времени ты программируешь?</strong></summary>
   С 2015 года. Тогда всё было проще — HTML не прикидывался языком, а фронт с бэком ещё не воевали.
 </details>
 
@@ -107,11 +98,6 @@
   <summary><strong>Любимый язык программирования?</strong></summary>
   **C#** — как IKEA: удобно, пока не начнёшь собирать в проде.  
   **Python** — как домашние тапки: уютно, но в прод — не выйдешь.
-</details>
-
-<details>
-  <summary><strong>Можно ли с тобой поработать?</strong></summary>
-  Конечно! Только сначала настрой Git без гугла... и переживи ревью от самого себя.
 </details>
 
 ---
