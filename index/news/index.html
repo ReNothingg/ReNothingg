@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .news-list li .news-title a {
+            color: var(--text-color);
+        }
+        .news-list li .news-title a:hover {
+            color: var(--light-accent); 
+        }
+        .latest-news-badge {
+            margin-left: 8px;
+            font-size: 0.9em;
+            display: inline-block;
+            animation: pulse-badge 1.5s infinite ease-in-out;
+        }
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="../../index.html" style="text-decoration: none;"><h1 class="logo">ReNothingg</h1></a>
+                <span id="sticky-section-title" class="sticky-title">Новости</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Главная</a></li>
+                    <li><a href="news.html" class="active">Новости</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="news-archive" data-section-title="Новости">
+            <div class="container">
+                <h3 class="animate-on-scroll fade-in">Архив Новостей</h3>
+                <div class="news-container">
+                    <ul class="news-list">
+                        <li class="animate-on-scroll fade-in-left">
+                            <span class="news-date">20.06.2025</span>
+                            <h4 class="news-title"><a href="https://www.youtube.com/watch?v=uoTeVcbG1gw&t=87s" title="Видео будет доступно на YouTube">Unity за 9 минут: Перемещение курсором</a></h4>
+                            <p>В этом видео я покажу, как всего за несколько минут реализовать физически реалистичное перемещение объектов мышкой в Unity. Подходит для интерактивных проектов, игр и симуляций. Скрипт может показаться немного сложным, поэтому желательно иметь базовые знания Unity и C#.</p>
+                        </li>
+
+                        <li class="animate-on-scroll fade-in-left">
+                            <span class="news-date">13.06.2025</span>
+                            <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=3C-C_nzmTJzYu6zd" title="Видео будет доступно на YouTube">Unity за 15 минут: делаем Flappy Bird под Android</a></h4>
+                            <p>Привет! 👋 Это моё первое видео на YouTube, и я немного нервничал, так что возможны запинки — не судите строго :)</p>
+                        </li>
+
+                        <li class="animate-on-scroll fade-in-left" data-animation-delay="0.1s">
+                            <span class="news-date">10.06.2025</span>
+                            <h4 class="news-title"><a href="#">Новый сайт и демо версии</a></h4>
+                            <p>Был создан новый раздел сайта: <a href="Blender/index.html">Blender.</a> В нем будет сборник моих работ в 3D. Так же были опубликованны демо версии Floppa RUN и [F]CUBE. Вы их можете скачать либо на этом сайте, либо... ну... <a href="FCube/index.html">на этом сайте?</a></p>
+                        </li>
+
+                        <li class="animate-on-scroll fade-in-left" data-animation-delay="0.2s">
+                            <span class="news-date">08.06.2025</span>
+                            <h4 class="news-title"><a href="#">Перенос сайта</a></h4>
+                            <p>Мой сайт-визитка был перенесен на новый <a href="https://renothingg.github.io/ReNothingg/">домен</a>. Поскольку все изменения производидись с... телефона... на веб версии GitHub'а возможны некоторые баги или ошибки в файлах.</p>
+                        </li>
+
+                        <li class="animate-on-scroll fade-in-left" data-animation-delay="0.3s">
+                            <span class="news-date">05.06.2025</span>
+                            <h4 class="news-title"><a href="#">Добавление Floppa Run и разработка сайта для игры</a></h4>
+                            <p>На сайте был добавлена игра Floppa Run. Теперь вы можете скачть ее и протестировать. Сайт для Floppa Run находится в разработке.</p>
+                        </li>
+
+                        <li class="animate-on-scroll fade-in-left" data-animation-delay="0.4s">
+                            <span class="news-date">03.06.2025</span>
+                            <h4 class="news-title"><a href="https://synvexai.github.io/SynvexAI/" target="_blank">Создание сайта SynvexAI</a></h4>
+                            <p>Был создан сайт <a href="https://synvexai.github.io/SynvexAI/" target="_blank">SynvexAI.</a> Его разработкой занималось пару человек, включая меня.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="currentYear"></span> ReNothingg. Все права защищены. Сделано с <span class="heart">🖤</span></p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Наверх" aria-label="Вернуться наверх">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"/></svg>
+    </button>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

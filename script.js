@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         viewAllGithubLink.style.display = 'none';
     }
     
-    function renderSkeletons(count = 6) {
+    function renderSkeletons(count = 8) {
         if (!reposContainer) return;
         reposContainer.innerHTML = '';
         for (let i = 0; i < count; i++) {
