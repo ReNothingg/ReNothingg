@@ -17,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'stan.png',
         'TextMatrialsLight.png',
         'vglitch.png',
-        'watermelon.png'
+        'watermelon.png',
+        'Ice.png'
     ];
 
     const lightbox = document.getElementById('lightbox');
