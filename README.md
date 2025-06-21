@@ -41,7 +41,7 @@
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=58a6ff&line=58a6ff&point=58a6ff&area=true&area_color=161b22&radius=8&hide_border=true" alt="GitHub Activity Graph" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=renothingg&theme=onedark&hide_border=true" alt="Streak Stats" />
+  <img src="https://github-readme-streak-stats-eight.vercel.app/?user=ReNothingg&theme=onedark&hide_border=true" alt="Streak Stats" />
 </p>
 
 <p align="center">
