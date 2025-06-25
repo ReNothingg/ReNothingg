@@ -6,9 +6,14 @@
   <a href="https://github.com/renothingg">
     <img src="https://count.getloli.com/get/@renothingg?theme=rule34" alt="Visit Count" />
   </a>
-</p>
 
-<p align="center">
+  <p align="center">
+    <a href="https://boosty.to/blootber" target="_blank">
+      <img src="https://img.shields.io/badge/Поддержать%20на%20Boosty-FF5C00?style=for-the-badge&logo=boosty&logoColor=white" alt="Boosty Button" />
+    </a>
+  </p>
+ 
+  
   🌐 <a href="https://renothingg.github.io/ReNothingg/" target="_blank"><strong>Мой сайт</strong></a>
 </p>
 
