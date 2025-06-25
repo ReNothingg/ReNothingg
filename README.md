@@ -6,6 +6,7 @@
   <a href="https://github.com/renothingg">
     <img src="https://count.getloli.com/get/@renothingg?theme=rule34" alt="Visit Count" />
   </a>
+</p>
 
   <p align="center">
     <a href="https://boosty.to/blootber" target="_blank">
@@ -13,7 +14,7 @@
     </a>
   </p>
  
-  
+<p align="center">
   🌐 <a href="https://renothingg.github.io/ReNothingg/" target="_blank"><strong>Мой сайт</strong></a>
 </p>
 
