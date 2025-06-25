@@ -2,17 +2,17 @@
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=900&size=40&pause=1000&color=00F716&background=18181800&center=true&vCenter=true&random=true&width=500&lines=Welcome+to+my+GitHub" alt="Typing SVG" /></a>
 </h1>
 
-<p align="center">
-  <a href="https://github.com/renothingg">
-    <img src="https://count.getloli.com/get/@renothingg?theme=rule34" alt="Visit Count" />
-  </a>
-</p>
-
   <p align="center">
     <a href="https://boosty.to/blootber" target="_blank">
       <img src="https://img.shields.io/badge/Поддержать%20на%20Boosty-FF5C00?style=for-the-badge&logo=boosty&logoColor=white" alt="Boosty Button" />
     </a>
   </p>
+
+<p align="center">
+  <a href="https://github.com/renothingg">
+    <img src="https://count.getloli.com/get/@renothingg?theme=rule34" alt="Visit Count" />
+  </a>
+</p>
  
 <p align="center">
   🌐 <a href="https://renothingg.github.io/ReNothingg/" target="_blank"><strong>Мой сайт</strong></a>
