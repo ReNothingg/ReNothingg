@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Nunito+&weight=900&size=35&pause=1000&color=09F716&width=435&lines=%D0%94%D0%BE%D0%B1%D1%80%D0%BE+%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C!;%D0%AD%D1%82%D0%BE+GitHub+ReNothingg" alt="Typing SVG" /></a>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Nunito+&weight=900&size=35&pause=1000&color=09F716&width=435&lines=%D0%94%D0%BE%D0%B1%D1%80%D0%BE+%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C!;%D0%AD%D1%82%D0%BE+GitHub+ReNothingg" alt="Typing SVG" /></a>
 </p> 
 
 <p align="center">
@@ -13,7 +13,6 @@
     <img src="https://img.shields.io/badge/Поддержать%20на%20Boosty-FF5C00?style=for-the-badge&logo=boosty&logoColor=white" alt="Boosty Button" /> </a>
   <a href="https://renothingg.github.io/ReNothingg/"><img src="https://img.shields.io/badge/🌐-Мой%20сайт-4ABCF1?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" /></a>
 </p>
-
 
 <p align="center">
   <a href="https://www.tiktok.com/@renothingg" target="_blank">
@@ -75,11 +74,6 @@
   <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma" alt="Figma"/>
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux" alt="Linux"/>
 </p>
----
-
-## 😂 Random Dev Jokes / Вообще не смешно
-
-![Jokes Card](https://readme-jokes.vercel.app/api?hideBorder&theme=cobalt&qColor=%23944bcc)
 
 ---
 
