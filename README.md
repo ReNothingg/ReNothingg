@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Consolas&weight=700&size=40&pause=1000&color=00F716&background=18181800&center=true&vCenter=true&random=true&width=600&lines=Привет,+я+ReNothingg!;Добро+пожаловать+в++GitHub!" alt="Typing SVG" />
-</p> 
+</p>
 
 <p align="center">
   <a href="https://github.com/renothingg">
@@ -13,6 +13,7 @@
     <img src="https://img.shields.io/badge/Поддержать%20на%20Boosty-FF5C00?style=for-the-badge&logo=boosty&logoColor=white" alt="Boosty Button" /> </a>
   <a href="https://renothingg.github.io/ReNothingg/"><img src="https://img.shields.io/badge/🌐-Мой%20сайт-4ABCF1?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" /></a>
 </p>
+
 
 <p align="center">
   <a href="https://www.tiktok.com/@renothingg" target="_blank">
