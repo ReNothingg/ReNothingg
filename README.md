@@ -1,3 +1,5 @@
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Nunito+&weight=900&size=35&pause=1000&color=09F716&width=435&lines=%D0%94%D0%BE%D0%B1%D1%80%D0%BE+%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C!;%D0%AD%D1%82%D0%BE+GitHub+ReNothingg" alt="Typing SVG" /></a>
+
 <p align="center">
   <a href="https://github.com/renothingg">
     <img src="https://count.getloli.com/get/@renothingg?theme=rule34" alt="Visit Count" />
