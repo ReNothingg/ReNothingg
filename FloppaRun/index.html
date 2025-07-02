@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floppa RUN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo-area">
+                <a href="#" class="logo">Floppa RUN</a>
+                <span class="sticky-title" id="pageStickyTitle">Floppa RUN</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#hero" class="active">Главная</a></li>
+                    <li><a href="#features">Режимы</a></li>
+                    <li><a href="#media">Медиа</a></li>
+                    <li><a href="#community">Сообщество</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-content">
+                <h2 class="animate-on-scroll fade-in-up">Floppa RUN</h2>
+                <p class="subtitle animate-on-scroll fade-in-up" data-animation-delay="200">Захватывающий бесконечный раннер, где вы управляете Шлёпой, уворачиваясь от препятствий и собирая пельмени!</p>
+                <a href="FloppaRun\FloppaRun.apk" download class="cta-button hero-cta animate-on-scroll fade-in-up" data-animation-delay="400"> Скачать бета </a>
+            </div>
+        </section>
+
+        <section id="features" data-scroll-target>
+            <div class="container">
+                <h3 class="animate-on-scroll fade-in">Режимы игры</h3>
+                <div class="features-grid">
+                    <div class="feature-card animate-on-scroll zoom-in">
+                        <div class="feature-icon-placeholder"> 🧲 </div>
+                        <h4>Гравитационная пушка</h4>
+                        <p>Инструмент, позволяющий поднимать, перемещать, вращать, замораживать и удалять гравитацию у физических объектов.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll zoom-in" data-animation-delay="150">
+                        <div class="feature-icon-placeholder"> 🔍 </div>
+                        <h4>Доступ к инспектору</h4>
+                        <p>Возможность для игрока использовать специальный инструмент (инспектор), который позволяет просматривать и редактировать свойства объектов в игровом мире.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll zoom-in" data-animation-delay="300">
+                        <div class="feature-icon-placeholder"> 🗺️ </div>
+                        <h4>Мир с разными локациями</h4>
+                        <p>Карта в [F]CUBE поделена на участки. Каждый из этих участков за что-то отвечает. Например у нас есть зона удаления. При попадании в эту зону обьекты растворяются.</p>
+                    </div>
+                    <div class="feature-card animate-on-scroll zoom-in" data-animation-delay="300">
+                        <div class="feature-icon-placeholder"> 🛠️ </div>
+                        <h4>Инструментарий</h4>
+                        <p>Инструментарий в [F]CUBE разнообразен. Он поможет вам воплатить все ваши задумки в игру.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="media" data-scroll-target>
+            <div class="container">
+                <h3 class="animate-on-scroll fade-in">Медиа Галерея</h3>
+                <div class="media-grid">
+                    <div class="media-item animate-on-scroll fade-in-left">
+                        <a href="assets/screenshots/screen1.jpg" data-lightbox="gallery" title="Описание скриншота 1">
+                            <img src="assets/screenshots/screen1.jpg" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="150">
+                         <a href="assets/screenshots/screen2.jpg" data-lightbox="gallery" title="Описание скриншота 2">
+                            <img src="assets/screenshots/screen2.jpg" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/screen3.jpg" data-lightbox="gallery" title="Описание скриншота 3">
+                            <img src="assets/screenshots/screen3.jpg" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/screen4.jpg" data-lightbox="gallery" title="Описание скриншота 3">
+                            <img src="assets/screenshots/screen4.jpg" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/screen5.jpg" data-lightbox="gallery" title="Описание скриншота 3">
+                            <img src="assets/screenshots/screen5.jpg" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/screen6.jpg" data-lightbox="gallery" title="Описание скриншота 3">
+                            <img src="assets/screenshots/screen6.jpg" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="community" data-scroll-target>
+            <div class="container">
+                <h3 class="animate-on-scroll fade-in">Присоединяйтесь к Сообществу</h3>
+                <div class="contact-cta animate-on-scroll fade-in-up" data-animation-delay="300">
+                    <p>Телеграм с новостями!</p>
+                    <a href="https://t.me/flopparun" class="email-link">Telegram</a>
+                </div>
+                <div class="contact-cta animate-on-scroll fade-in-up" data-animation-delay="300">
+                    <p>Есть вопросы или предложения? Напишите нам!</p>
+                    <a href="mailto:renothingg@gmail.com" class="email-link">renothingg@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Floppa RUN. Все права защищены.</p>
+            <p>Сделано с <span class="heart">♥</span> для геймеров.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Наверх">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 3.707 2.354 9.354a.5.5 0 1 1-.708-.708l6-6z"/>
+            <path fill-rule="evenodd" d="M7.646 6.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 7.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
