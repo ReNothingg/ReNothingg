@@ -80,24 +80,21 @@ document.addEventListener('DOMContentLoaded', () => {
             mediaElement.onloadedmetadata = () => {
                 lightboxResolution.textContent = `Разрешение: ${mediaElement.videoWidth} x ${mediaElement.videoHeight}`;
             };
-            mediaElement.onerror = (e) => {
+            mediaElement.onerror = () => {
                 lightboxResolution.textContent = 'Разрешение: ошибка';
                 const errorText = document.createElement('p');
                 errorText.textContent = `Не удалось загрузить видео: ${fileName}.`;
                 if (extension === 'mkv') {
-                    errorText.textContent += ' Формат .mkv может не поддерживаться вашим браузером. Попробуйте .mp4 или .webm.';
+                    errorText.textContent += ' Формат .mkv может не поддерживаться вашим браузером.';
                 }
                 errorText.style.color = 'var(--light-accent)';
                 lightboxMediaContainer.appendChild(errorText);
             };
-            if (extension === 'mkv') {
-                console.warn(`Файл .mkv (${fileName}): поддержка в HTML5 <video> может быть ограничена. Рекомендуется использовать .mp4 или .webm для лучшей совместимости.`);
-            }
         } else {
             lightboxMediaContainer.textContent = 'Неподдерживаемый тип файла.';
             lightboxResolution.textContent = '';
             lightboxFilesize.textContent = '';
-            lightboxDownloadButton.style.display = 'none'; 
+            lightboxDownloadButton.style.display = 'none';
             lightbox.classList.add('show');
             document.body.classList.add('lightbox-open');
             return;
@@ -105,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mediaElement.src = filePath;
         lightboxMediaContainer.appendChild(mediaElement);
-        lightboxDownloadButton.style.display = 'inline-block'; 
+        lightboxDownloadButton.style.display = 'inline-block';
 
         fetch(filePath)
             .then(response => {
@@ -115,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         lightboxFilesize.textContent = `Размер: ${formatFileSize(parseInt(contentLength, 10))}`;
                     } else {
                         response.blob().then(blob => {
-                             lightboxFilesize.textContent = `Размер: ${formatFileSize(blob.size)}`;
+                            lightboxFilesize.textContent = `Размер: ${formatFileSize(blob.size)}`;
                         }).catch(() => {
                             lightboxFilesize.textContent = 'Размер: не удалось определить';
                         });
@@ -127,7 +124,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(() => {
                 lightboxFilesize.textContent = 'Размер: ошибка сети';
             });
-
 
         lightbox.classList.add('show');
         document.body.classList.add('lightbox-open');
@@ -143,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             video.load();
         }
         lightboxMediaContainer.innerHTML = '';
-        lightboxDownloadButton.href = '#'; 
+        lightboxDownloadButton.href = '#';
         lightboxDownloadButton.removeAttribute('download');
     }
 
@@ -158,7 +154,6 @@ document.addEventListener('DOMContentLoaded', () => {
             closeLightbox();
         }
     });
-
 
     imageFiles.forEach((fileName, index) => {
         const galleryItem = document.createElement('div');
@@ -175,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(extension)) {
             thumbMediaElement = document.createElement('img');
             thumbMediaElement.alt = `Рендер: ${fileName}`;
+            thumbMediaElement.loading = 'eager'; // отключаем ленивую загрузку
         } else if (['mp4', 'webm', 'ogv', 'mkv'].includes(extension)) {
             thumbMediaElement = document.createElement('video');
             thumbMediaElement.muted = true;
@@ -192,9 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
             placeholder.style.fontSize = '1.2rem';
             thumbMediaElement = placeholder;
         }
-        
+
         if (thumbMediaElement.tagName === 'IMG' || thumbMediaElement.tagName === 'VIDEO') {
-            thumbMediaElement.src = filePath; 
+            thumbMediaElement.src = filePath;
             thumbMediaElement.onerror = () => {
                 const errorPlaceholder = document.createElement('div');
                 errorPlaceholder.textContent = `Ошибка: .${extension}`;
@@ -205,12 +201,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorPlaceholder.style.justifyContent = 'center';
                 errorPlaceholder.style.color = 'var(--light-accent)';
                 errorPlaceholder.style.fontSize = '0.9rem';
-                
-                mediaWrapper.innerHTML = ''; 
+                mediaWrapper.innerHTML = '';
                 mediaWrapper.appendChild(errorPlaceholder);
             };
         }
-        
+
         mediaWrapper.appendChild(thumbMediaElement);
         galleryItem.appendChild(mediaWrapper);
 
@@ -224,5 +219,19 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryItem.addEventListener('click', () => {
             openLightbox(filePath, fileName);
         });
+    });
+
+    imageFiles.forEach((fileName) => {
+        const extension = getFileExtension(fileName);
+        const filePath = `${renderFolderPath}${fileName}`;
+
+        if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(extension)) {
+            const img = new Image();
+            img.src = filePath;
+        } else if (['mp4', 'webm', 'ogv', 'mkv'].includes(extension)) {
+            const video = document.createElement('video');
+            video.preload = 'auto';
+            video.src = filePath;
+        }
     });
 });
