@@ -163,20 +163,51 @@ document.addEventListener('DOMContentLoaded', () => {
         const mediaWrapper = document.createElement('div');
         mediaWrapper.classList.add('gallery-item-media-wrapper');
 
+        
+        const mediaLoader = document.createElement('div');
+        mediaLoader.classList.add('media-loader');
+        mediaWrapper.appendChild(mediaLoader);
+        
+
         const filePath = `${renderFolderPath}${fileName}`;
         const extension = getFileExtension(fileName);
         let thumbMediaElement;
 
+        const onMediaLoad = () => {
+            thumbMediaElement.classList.add('loaded');
+            mediaLoader.classList.add('hidden');
+        };
+
+        const onMediaError = () => {
+            mediaLoader.classList.add('hidden'); 
+            const errorPlaceholder = document.createElement('div');
+            errorPlaceholder.textContent = `Ошибка: .${extension}`;
+            errorPlaceholder.style.width = '100%';
+            errorPlaceholder.style.height = '100%';
+            errorPlaceholder.style.display = 'flex';
+            errorPlaceholder.style.alignItems = 'center';
+            errorPlaceholder.style.justifyContent = 'center';
+            errorPlaceholder.style.color = 'var(--light-accent)';
+            errorPlaceholder.style.fontSize = '0.9rem';
+            mediaWrapper.innerHTML = ''; 
+            mediaWrapper.appendChild(errorPlaceholder);
+        };
+
         if (['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg'].includes(extension)) {
             thumbMediaElement = document.createElement('img');
             thumbMediaElement.alt = `Рендер: ${fileName}`;
-            thumbMediaElement.loading = 'eager'; // отключаем ленивую загрузку
+            thumbMediaElement.loading = 'eager';
+            thumbMediaElement.onload = onMediaLoad; 
+            thumbMediaElement.onerror = onMediaError; 
         } else if (['mp4', 'webm', 'ogv', 'mkv'].includes(extension)) {
             thumbMediaElement = document.createElement('video');
             thumbMediaElement.muted = true;
             thumbMediaElement.preload = "metadata";
             thumbMediaElement.setAttribute('playsinline', '');
+            thumbMediaElement.onloadeddata = onMediaLoad; 
+            thumbMediaElement.onerror = onMediaError; 
         } else {
+            mediaLoader.classList.add('hidden'); 
             const placeholder = document.createElement('div');
             placeholder.textContent = `.${extension}`;
             placeholder.style.width = '100%';
@@ -191,19 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (thumbMediaElement.tagName === 'IMG' || thumbMediaElement.tagName === 'VIDEO') {
             thumbMediaElement.src = filePath;
-            thumbMediaElement.onerror = () => {
-                const errorPlaceholder = document.createElement('div');
-                errorPlaceholder.textContent = `Ошибка: .${extension}`;
-                errorPlaceholder.style.width = '100%';
-                errorPlaceholder.style.height = '100%';
-                errorPlaceholder.style.display = 'flex';
-                errorPlaceholder.style.alignItems = 'center';
-                errorPlaceholder.style.justifyContent = 'center';
-                errorPlaceholder.style.color = 'var(--light-accent)';
-                errorPlaceholder.style.fontSize = '0.9rem';
-                mediaWrapper.innerHTML = '';
-                mediaWrapper.appendChild(errorPlaceholder);
-            };
         }
 
         mediaWrapper.appendChild(thumbMediaElement);
