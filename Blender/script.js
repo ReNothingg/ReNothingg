@@ -3,24 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderFolderPath = 'render/';
 
     const imageFiles = [
-        '0001-0100.mkv',
+        'gman-test.png',
+        'LiquidGlass.png',
         'FHUMAN.png',
-        'Gamepad.png',
         'gribochek.png',
+        'Ice.png',
+        'watermelon.png',
         'hum.png',
         'lololowka.png',
-        'NSkirt.png',
         'NWithAmNam.png',
         'smotrashixlo.png',
         'spaceAnim0001-0250.mkv',
         'spasaasasas.png',
         'stan.png',
-        'TextMatrialsLight.png',
         'vglitch.png',
-        'watermelon.png',
-        'Ice.png',
-        'LiquidGlass.png',
-        'gman-test.png'
+        'NSkirt.png',
+        'Gamepad.png',
+        'TextMatrialsLight.png',
     ];
 
     const lightbox = document.getElementById('lightbox');
