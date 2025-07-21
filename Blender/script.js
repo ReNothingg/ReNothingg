@@ -163,11 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const mediaWrapper = document.createElement('div');
         mediaWrapper.classList.add('gallery-item-media-wrapper');
 
-        
-        const mediaLoader = document.createElement('div');
-        mediaLoader.classList.add('media-loader');
-        mediaWrapper.appendChild(mediaLoader);
-        
+        // --- ИЗМЕНЕНО: Создаем "шумовой" слой вместо старого загрузчика ---
+        const noiseOverlay = document.createElement('div');
+        noiseOverlay.classList.add('noise-overlay');
+        mediaWrapper.appendChild(noiseOverlay);
+        // --- КОНЕЦ ИЗМЕНЕНИЙ ---
 
         const filePath = `${renderFolderPath}${fileName}`;
         const extension = getFileExtension(fileName);
@@ -175,11 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const onMediaLoad = () => {
             thumbMediaElement.classList.add('loaded');
-            mediaLoader.classList.add('hidden');
+            noiseOverlay.classList.add('hidden');
         };
 
         const onMediaError = () => {
-            mediaLoader.classList.add('hidden'); 
+            noiseOverlay.classList.add('hidden'); // Скрываем слой при ошибке
             const errorPlaceholder = document.createElement('div');
             errorPlaceholder.textContent = `Ошибка: .${extension}`;
             errorPlaceholder.style.width = '100%';
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorPlaceholder.style.justifyContent = 'center';
             errorPlaceholder.style.color = 'var(--light-accent)';
             errorPlaceholder.style.fontSize = '0.9rem';
-            mediaWrapper.innerHTML = ''; 
+            mediaWrapper.innerHTML = '';
             mediaWrapper.appendChild(errorPlaceholder);
         };
 
@@ -197,17 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
             thumbMediaElement = document.createElement('img');
             thumbMediaElement.alt = `Рендер: ${fileName}`;
             thumbMediaElement.loading = 'eager';
-            thumbMediaElement.onload = onMediaLoad; 
-            thumbMediaElement.onerror = onMediaError; 
+            thumbMediaElement.onload = onMediaLoad;
+            thumbMediaElement.onerror = onMediaError;
         } else if (['mp4', 'webm', 'ogv', 'mkv'].includes(extension)) {
             thumbMediaElement = document.createElement('video');
             thumbMediaElement.muted = true;
             thumbMediaElement.preload = "metadata";
             thumbMediaElement.setAttribute('playsinline', '');
-            thumbMediaElement.onloadeddata = onMediaLoad; 
-            thumbMediaElement.onerror = onMediaError; 
+            thumbMediaElement.onloadeddata = onMediaLoad;
+            thumbMediaElement.onerror = onMediaError;
         } else {
-            mediaLoader.classList.add('hidden'); 
+            noiseOverlay.classList.add('hidden');
             const placeholder = document.createElement('div');
             placeholder.textContent = `.${extension}`;
             placeholder.style.width = '100%';
