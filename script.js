@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let newActiveSectionTitle = "";
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - headerHeight - 60;
+            const sectionTop = section.offsetTop - headerHeight - 50;
             const sectionBottom = sectionTop + section.offsetHeight;
             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 newActiveSectionTitle = section.getAttribute('data-section-title');
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        if (sections.length > 0 && scrollPosition < sections[0].offsetTop - headerHeight - 60) {
+        if (sections.length > 0 && scrollPosition < sections[0].offsetTop - headerHeight - 50) {
             newActiveSectionTitle = "";
             newActiveSectionId = null;
         }
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 stickyTitleElement.textContent = currentStickyTitle;
                 if (currentStickyTitle) stickyTitleElement.classList.add('visible');
-            }, currentStickyTitle === "" || stickyTitleElement.textContent === "" ? 0 : 200);
+            }, currentStickyTitle === "" || stickyTitleElement.textContent === "" ? 0 : 180);
         }
 
         navLinks.forEach(link => {
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
         animatedElements.forEach(el => {
             observer.observe(el);
         });
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewAllGithubLink = document.getElementById('view-all-github-link');
     const CACHE_KEY_REPOS = `github_repos_data_${githubUsername}`;
     const CACHE_KEY_TIMESTAMP = `github_repos_timestamp_${githubUsername}`;
-    const CACHE_DURATION_MS = 4 * 60 * 60 * 1000;
+    const CACHE_DURATION_MS = 3 * 60 * 60 * 1000;
 
     if (viewAllGithubLink && githubUsername && githubUsername !== "ВАШ_GITHUB_USERNAME") {
         viewAllGithubLink.href = `https://github.com/${githubUsername}?tab=repositories`;
@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
         viewAllGithubLink.style.display = 'none';
     }
     
-    function renderSkeletons(count = 9) {
+    function renderSkeletons(count = 8) {
         if (!reposContainer) return;
         reposContainer.innerHTML = '';
         for (let i = 0; i < count; i++) {
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         repos.forEach((repo, index) => {
             const repoCard = document.createElement('a');
             repoCard.classList.add('repo-card', 'animate-on-scroll', 'fade-in-up');
-            repoCard.style.transitionDelay = `${index * 0.06}s`;
+            repoCard.style.transitionDelay = `${index * 0.05}s`;
             repoCard.href = repo.html_url;
             repoCard.target = "_blank";
             repoCard.setAttribute('aria-label', `Репозиторий ${escapeHtml(repo.name)}`);
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
             repoCard.innerHTML = `
                 <div class="repo-card-content">
                     <h4>${escapeHtml(repo.name)}</h4>
-                    <p class="repo-description">${repo.description ? escapeHtml(repo.description.substring(0, 100)) + (repo.description.length > 100 ? '...' : '') : '<i>Описание отсутствует.</i>'}</p>
+                    <p class="repo-description">${repo.description ? escapeHtml(repo.description.substring(0, 90)) + (repo.description.length > 90 ? '...' : '') : '<i>Описание отсутствует.</i>'}</p>
                 </div>
                 <div class="repo-meta">
                     ${repo.language ? `<span class="repo-language"><span class="language-color-dot" style="background-color: ${getLanguageColor(repo.language)};"></span> ${escapeHtml(repo.language)}</span>` : '<span class="repo-language"></span>'}
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Ruby": "#701516", "Go": "#00ADD8", "Swift": "#F05138", "Kotlin": "#A97BFF",
             "Rust": "#dea584", "Lua": "#000080", "Dart": "#00B4AB",
         };
-        return colors[language] || '#dddddd';
+        return colors[language] || '#cccccc';
     }
 
     function renderError(message) {
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function fetchGitHubRepos() {
-        if (!githubUsername || githubUsername === "ВАШ_GITHUB_USERNAME") { 
+        if (!githubUsername || githubUsername === "ВАШ_GITHUB_USERNAME") { //Я хз чесно. Я скачал этот код с какого то арабского сайта и там было "ВАШ_GITHUB_USERNAME". Если что то поменять то все сломается ;)
             renderError('GitHub username не указан.');
             return;
         }
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function fetchFreshGitHubRepos() {
-        const apiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=pushed&direction=desc&per_page=9`;
+        const apiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=pushed&direction=desc&per_page=6`;
         try {
             const response = await fetch(apiUrl);
             if (!response.ok) {
@@ -234,12 +234,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     if (scrollToTopBtn) {
         window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollToTopBtn.style.display = "block";
-                setTimeout(() => scrollToTopBtn.style.opacity = "0.85", 10);
+                setTimeout(() => scrollToTopBtn.style.opacity = "0.8", 10);
             } else {
                 scrollToTopBtn.style.opacity = "0";
-                setTimeout(() => scrollToTopBtn.style.display = "none", 400);
+                setTimeout(() => scrollToTopBtn.style.display = "none", 300);
             }
         }, { passive: true });
         scrollToTopBtn.addEventListener('click', () => {
@@ -261,9 +261,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const mouse = { x: null, y: null, radius: 0 };
 
         function updateMouseRadius() {
-            mouse.radius = (heroCanvas.height / 120) * (heroCanvas.width / 120);
-            if (mouse.radius < 60) mouse.radius = 60;
-            if (mouse.radius > 250) mouse.radius = 250;
+            mouse.radius = (heroCanvas.height / 100) * (heroCanvas.width / 100);
+            if (mouse.radius < 50) mouse.radius = 50;
+            if (mouse.radius > 200) mouse.radius = 200;
         }
 
         heroCanvas.addEventListener('mousemove', event => {
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.baseX = this.x; this.baseY = this.y;
                 this.directionX = directionX; this.directionY = directionY;
                 this.size = size; this.color = color;
-                this.density = (Math.random() * 35) + 12;
+                this.density = (Math.random() * 30) + 10;
             }
             draw() {
                 ctx.beginPath();
@@ -294,28 +294,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance === 0) distance = 0.1; 
+                    if (distance === 0) distance = 0.1; // prevent division by zero
                     let forceDirectionX = dx / distance;
                     let forceDirectionY = dy / distance;
                     let maxDistance = mouse.radius;
                     let force = (maxDistance - distance) / maxDistance; 
                     if (force < 0) force = 0;
-                    let moveX = forceDirectionX * force * this.density * 0.5;
-                    let moveY = forceDirectionY * force * this.density * 0.5;
+                    let moveX = forceDirectionX * force * this.density * 0.4;
+                    let moveY = forceDirectionY * force * this.density * 0.4;
                     if (distance < mouse.radius) {
                         this.x -= moveX;
                         this.y -= moveY;
                     } else {
-                        if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 25;
-                        if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 25;
+                        if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 20;
+                        if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 20;
                     }
                 } else {
-                    if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 25;
-                    if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 25;
+                    if (this.x !== this.baseX) this.x -= (this.x - this.baseX) / 20;
+                    if (this.y !== this.baseY) this.y -= (this.y - this.baseY) / 20;
                 }
                 if (Math.abs(this.x - this.baseX) > 1 || Math.abs(this.y - this.baseY) > 1) {
-                     this.x += this.directionX * 0.06;
-                     this.y += this.directionY * 0.06;
+                     this.x += this.directionX * 0.05;
+                     this.y += this.directionY * 0.05;
                 }
                 if (this.x + this.size > heroCanvas.width || this.x - this.size < 0) {
                     this.directionX = -this.directionX;
@@ -333,16 +333,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function initParticles() {
             particlesArray = [];
-            let numberOfParticles = (heroCanvas.height * heroCanvas.width) / 14000;
-            if (numberOfParticles > 180) numberOfParticles = 180;
-            if (numberOfParticles < 35) numberOfParticles = 35;
+            let numberOfParticles = (heroCanvas.height * heroCanvas.width) / 12000;
+            if (numberOfParticles > 150) numberOfParticles = 150;
+            if (numberOfParticles < 30) numberOfParticles = 30;
             for (let i = 0; i < numberOfParticles; i++) {
-                let size = (Math.random() * 2) + 0.6;
+                let size = (Math.random() * 1.8) + 0.5;
                 let x = (Math.random() * ((heroCanvas.width - size * 2) - (size * 2)) + size * 2);
                 let y = (Math.random() * ((heroCanvas.height - size * 2) - (size * 2)) + size * 2);
-                let directionX = (Math.random() * 0.25) - 0.125;
-                let directionY = (Math.random() * 0.25) - 0.125;
-                let color = 'rgba(220,220,220,0.6)';
+                let directionX = (Math.random() * 0.2) - 0.1;
+                let directionY = (Math.random() * 0.2) - 0.1;
+                let color = 'rgba(200,200,200,0.5)';
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }
@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 resizeCanvas(); 
                 updateMouseRadius();
                 initParticles();
-            }, 300);
+            }, 250);
         });
     } else if (heroCanvasElement) {
         console.warn("Элемент с id 'hero-canvas' найден, но это не <canvas>. Анимация частиц не будет отображена.");
