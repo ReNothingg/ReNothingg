@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
              .replace(/&/g, "&")
              .replace(/</g, "<")
              .replace(/>/g, ">")
-             .replace(/"/g, "\"")
+            .replace(/"/g, '"""')
              .replace(/'/g, "'");
     }
 
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             newActiveSectionId = null;
         }
 
-
         if (stickyTitleElement && newActiveSectionTitle !== currentStickyTitle) {
             stickyTitleElement.classList.remove('visible');
             currentStickyTitle = newActiveSectionTitle;
@@ -63,16 +62,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    let observer;
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
 
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            header.classList.toggle('nav-open');
+        });
+
+        mainNav.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                header.classList.remove('nav-open');
+            }
+        });
+    }
+
+    let observer;
     function observeAnimatedElements() {
         const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        if (observer) {
-            observer.disconnect();
-        }
-        if (!animatedElements.length) {
-            return;
-        }
+        if (observer) observer.disconnect();
+        if (!animatedElements.length) return;
+        
         observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -84,13 +94,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { threshold: 0.1 });
-        animatedElements.forEach(el => {
-            observer.observe(el);
-        });
+
+        animatedElements.forEach(el => observer.observe(el));
     }
-
     observeAnimatedElements();
-
 
     if (header && sections.length > 0) {
         calculateHeaderHeight();
@@ -104,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewAllGithubLink = document.getElementById('view-all-github-link');
     const CACHE_KEY_REPOS = `github_repos_data_${githubUsername}`;
     const CACHE_KEY_TIMESTAMP = `github_repos_timestamp_${githubUsername}`;
-    const CACHE_DURATION_MS = 3 * 60 * 60 * 1000;
+    const CACHE_DURATION_MS = 3 * 60 * 60 * 1000; // 3 hours
 
     if (viewAllGithubLink && githubUsername && githubUsername !== "ВАШ_GITHUB_USERNAME") {
         viewAllGithubLink.href = `https://github.com/${githubUsername}?tab=repositories`;
@@ -112,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
         viewAllGithubLink.style.display = 'none';
     }
     
-    function renderSkeletons(count = 8) {
+    function renderSkeletons(count = 6) {
         if (!reposContainer) return;
         reposContainer.innerHTML = '';
         for (let i = 0; i < count; i++) {
@@ -121,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
             skeletonCard.innerHTML = `
                 <div class="repo-card-content">
                     <h4></h4>
-                    <p></p><p></p><p></p>
+                    <p></p><p></p>
                 </div>
                 <div class="repo-meta">
                     <span></span><span></span><span></span>
@@ -184,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     async function fetchGitHubRepos() {
-        if (!githubUsername || githubUsername === "ВАШ_GITHUB_USERNAME") { //Я хз чесно. Я скачал этот код с какого то арабского сайта и там было "ВАШ_GITHUB_USERNAME". Если что то поменять то все сломается ;)
+        if (!githubUsername || githubUsername === "ВАШ_GITHUB_USERNAME") {
             renderError('GitHub username не указан.');
             return;
         }
@@ -236,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', () => {
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 scrollToTopBtn.style.display = "block";
-                setTimeout(() => scrollToTopBtn.style.opacity = "0.8", 10);
+                setTimeout(() => scrollToTopBtn.style.opacity = "1", 10);
             } else {
                 scrollToTopBtn.style.opacity = "0";
                 setTimeout(() => scrollToTopBtn.style.display = "none", 300);
@@ -294,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance === 0) distance = 0.1; // prevent division by zero
+                    if (distance === 0) distance = 0.1;
                     let forceDirectionX = dx / distance;
                     let forceDirectionY = dy / distance;
                     let maxDistance = mouse.radius;
@@ -342,7 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 let y = (Math.random() * ((heroCanvas.height - size * 2) - (size * 2)) + size * 2);
                 let directionX = (Math.random() * 0.2) - 0.1;
                 let directionY = (Math.random() * 0.2) - 0.1;
-                let color = 'rgba(200,200,200,0.5)';
+                let color = 'rgba(220, 220, 220, 0.6)';
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
             }
         }

@@ -6,8 +6,8 @@
     <title>ReNothingg</title>
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
     <meta property="og:title" content="Код, игры и ИИ — работаю над тем, что будет завтра. Или нет."/>
     <meta property="og:description" content="Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей." />
@@ -20,10 +20,10 @@
     <header>
         <div class="container header-container">
             <div class="logo-area">
-                <h1 class="logo">ReNothingg</h1>
+                <a href="#" class="logo-link"><h1 class="logo">ReNothingg</h1></a>
                 <span id="sticky-section-title" class="sticky-title"></span>
             </div>
-            <nav>
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#about">Обо мне</a></li>
                     <li><a href="#projects">Проекты</a></li>       
@@ -32,12 +32,17 @@
                     <li><a href="#contact">Контакты</a></li>
                 </ul>
             </nav>
+            <button id="menu-toggle" aria-label="Открыть меню">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
         </div>
     </header>
 
     <main>
         <section id="hero">
-            <div id="hero-canvas"></div>
+            <canvas id="hero-canvas"></canvas>
             <div class="hero-content container">
                 <h2 class="animate-on-scroll fade-in-up">ReNothingg</h2>
                 <h3 class="subtitle animate-on-scroll fade-in-up" data-animation-delay="0.2s">Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей.</h3>
@@ -47,15 +52,15 @@
         <section id="about" data-section-title="Обо мне">
           <div class="container">
             <h3 class="animate-on-scroll fade-in">Обо мне</h3>
-            <section class="about-me animate-on-scroll fade-in" data-animation-delay="0.2s">
+            <div class="about-me animate-on-scroll fade-in" data-animation-delay="0.2s">
               <p>Привет. Меня зовут Паша. Я разрабатываю проекты на стыке технологий, творчества и смысла. С детства увлечён кодом, системами и тем, как всё устроено — от нейросетей и видеокарт до внутренностей смартфонов. Люблю разбирать, исследовать и собирать что-то своё.</p>
               <p>Программирование для меня — это не просто профессия. Это способ понимать себя, взаимодействовать с миром и оставлять после себя что-то полезное. Мне важно, чтобы технологии помогали людям, а не заменяли их.</p>
               <p>Я веду сайт, публикую гайды, делюсь проектами на GitHub и стараюсь быть частью open-source-сообщества. Не ради лайков, а потому что верю: знания должны быть свободными, а развитие — доступным.</p>
               <p>Сейчас учусь в физико-математическом лицее, участвую в инженерных и ИИ-проектах. Один из них — <strong>ReMind</strong> — собственная разработка на базе нейросетей. Он уже стал основой лицейского робота, и это только начало.</p>
               <p>Слежу за тем, чтобы не перегореть. Мне важно оставаться внимательным к себе, не терять внутреннюю опору и продолжать расти не только в знаниях, но и как человек.</p>
               <p>Помимо технологий, люблю музыку — особенно атмосферную: ambient, downtempo, synth-pop, меланхоличную электронику. Она помогает сосредоточиться и глубже чувствовать. Иногда играю на гитаре, иногда просто залипаю в игры с идеей — вроде <em>Detroit: Become Human</em> или <em>The Stanley Parable</em>.</p>
-              <p>Если ты тоже увлечён созданием чего-то настоящего — пиши. Буду рад пообщаться, обсудить идеи или просто поговоритью.</p>
-            </section>
+              <p>Если ты тоже увлечён созданием чего-то настоящего — пиши. Буду рад пообщаться, обсудить идеи или просто поговорить.</p>
+            </div>
           </div>
         </section>
 
@@ -64,8 +69,6 @@
             <div class="container">
                 <h3>Мои Проекты</h3>
                 <div class="project-grid">
-
-
                     <a href="https://synvexai.github.io/SynvexAI/" target="_blank" class="project-card animate-on-scroll fade-in-up">
                         <div class="project-image-container">
                             <img src="index/synvexai.jpg" alt="synvexai">
@@ -76,8 +79,7 @@
                         </div>
                     </a>
 
-
-                    <div class="game-card animate-on-scroll fade-in-up">
+                    <div class="game-card animate-on-scroll fade-in-up" data-animation-delay="0.05s">
                         <a href="FCube\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт [F]CUBE">
                             <img src="FCube\fcube.jpg" alt="[F]CUBE баннер" class="game-banner-img">
                         </a>
@@ -99,9 +101,9 @@
                         </div>
                     </div>
 
-                    <div class="game-card animate-on-scroll fade-in-up" data-animation-delay="0.1s">
+                    <div class="game-card animate-on-scroll fade-in-up" data-animation-delay="0.15s">
                         <a href="Blender\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт... ну вы поняли">
-                            <img src="Blender\render\spasaasasas.png" alt="Floppa Run баннер" class="game-banner-img">
+                            <img src="Blender\render\spasaasasas.png" alt="Blender Works Banner" class="game-banner-img">
                         </a>
                         <div class="game-info">
                             <h4 class="game-title">Работы в Blender</h4>
@@ -128,43 +130,44 @@
         <section id="news" data-section-title="Новости">
             <div class="container">
                 <h3 class="animate-on-scroll fade-in">Последние Новости</h3>
-
                 <ul class="news-list">
-                    <li class="animate-on-scroll fade-in-left">
-                    <span class="news-date">20.07.2025</span>
-                    <h4 class="news-title"><a href="https://github.com/ReNothingg/Draxon">Draxon</a></h4>
-                    <p>Draxon — это красивая, продуманная и "магическая" утилита для терминала, созданная для скачивания видео и аудио без необходимости запоминать сложные аргументы командной строки. Вся мощь yt-dlp обернута в интуитивно понятный интерфейс, который управляется исключительно с клавиатуры.</p>
+                    <li class="animate-on-scroll fade-in-up">
+                        <div class="news-content">
+                            <span class="news-date">20.07.2025</span>
+                            <h4 class="news-title"><a href="https://github.com/ReNothingg/Draxon">Draxon</a></h4>
+                            <p>Draxon — это красивая, продуманная и "магическая" утилита для терминала, созданная для скачивания видео и аудио без необходимости запоминать сложные аргументы командной строки.</p>
+                        </div>
+                    </li>
+                    <li class="animate-on-scroll fade-in-up">
+                        <div class="news-content">
+                            <span class="news-date">02.07.2025</span>
+                            <h4 class="news-title"><a href="https://youtu.be/EAtrIKG9bVY?si=rvvhiuHfNlCX2TPm">Floppa RUN — [Randomverse] — Showcase</a></h4>
+                            <p>В этом этом режиме каждый запуск — новая трасса, построенная на ходу. Никаких шаблонов. Только рандом. Только Floppa.</p>
+                        </div>
+                    </li>
+                    <li class="animate-on-scroll fade-in-up">
+                        <div class="news-content">
+                            <span class="news-date">28.06.2025</span>
+                            <h4 class="news-title">Перенос на новую версию Unity</h4>
+                            <p>Из-за постоянных проблем с билдом в Unity 6 я решил перенести проект на новую версию Unity. Это позволит ускорить разработку и улучшить стабильность игры.</p>
+                        </div>
+                    </li>
+                    <li class="animate-on-scroll fade-in-up">
+                        <div class="news-content">
+                            <span class="news-date">20.06.2025</span>
+                            <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=a1svjKjnX9-RrOcx">Unity за 9 минут: Перемещение курсором</a></h4>
+                            <p>В этом видео я покажу, как всего за несколько минут реализовать физически реалистичное перемещение объектов мышкой в Unity. Подходит для интерактивных проектов, игр и симуляций.</p>
+                        </div>
+                    </li>
+                    <li class="animate-on-scroll fade-in-up">
+                        <div class="news-content">
+                            <span class="news-date">13.06.2025</span>
+                            <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=a1svjKjnX9-RrOcx">Unity за 15 минут: делаем Flappy Bird под Android</a></h4>
+                            <p>Привет! 👋 Это моё первое видео на YouTube, и я немного нервничал, так что возможны запинки — не судите строго :)</p>
+                        </div>
+                    </li>
                 </ul>
-
-                <ul class="news-list">
-                    <li class="animate-on-scroll fade-in-left">
-                    <span class="news-date">02.07.2025</span>
-                    <h4 class="news-title"><a href="https://youtu.be/EAtrIKG9bVY?si=rvvhiuHfNlCX2TPm">Floppa RUN — [Randomverse] — Showcase</a></h4>
-                    <p>В этом этом режиме каждый запуск — новая трасса, построенная на ходу. Никаких шаблонов. Только рандом. Только Floppa.</p>
-                </ul>
-
-                <ul class="news-list">
-                    <li class="animate-on-scroll fade-in-left">
-                    <span class="news-date">28.06.2025</span>
-                    <h4 class="news-title">Перенос на новую версию Unity</h4>
-                    <p>Из-за постоянных проблем с билдом в Unity 6 я решил перенести проект на новую версию Unity. Это позволит ускорить разработку и улучшить стабильность игры.</p>
-                </ul>
-
-                <ul class="news-list">
-                    <li class="animate-on-scroll fade-in-left">
-                    <span class="news-date">20.06.2025</span>
-                    <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=a1svjKjnX9-RrOcx">Unity за 9 минут: Перемещение курсором</a></h4>
-                    <p>В этом видео я покажу, как всего за несколько минут реализовать физически реалистичное перемещение объектов мышкой в Unity. Подходит для интерактивных проектов, игр и симуляций. Скрипт может показаться немного сложным, поэтому желательно иметь базовые знания Unity и C#.</p>
-                </ul>
-
-                <ul class="news-list">
-                    <li class="animate-on-scroll fade-in-left">
-                    <span class="news-date">13.06.2025</span>
-                    <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=a1svjKjnX9-RrOcx">Unity за 15 минут: делаем Flappy Bird под Android</a></h4>
-                    <p>Привет! 👋 Это моё первое видео на YouTube, и я немного нервничал, так что возможны запинки — не судите строго :)</p>
-                </ul>
-
-                <a href="index\news.html" class="email-link animate-on-scroll zoom-in" data-animation-delay="0.2s">Больше новостей</a>
+                <a href="index\news.html" class="view-more-link animate-on-scroll zoom-in" data-animation-delay="0.2s">Больше новостей</a>
             </div>
         </section>
 
@@ -174,15 +177,15 @@
                 <p class="animate-on-scroll fade-in" data-animation-delay="0.1s">Готов обсудить ваши идеи или предложения о сотрудничестве.</p>
                 <a href="mailto:renothingg@gmail.com" class="email-link animate-on-scroll zoom-in" data-animation-delay="0.2s">renothingg@gmail.com</a>
                 <a href="https://boosty.to/blootber" class="email-link animate-on-scroll zoom-in" data-animation-delay="0.2s">Boosty</a>
-                <div class="social-links animate-on-scroll fade-in flex gap-4 text-3xl" data-animation-delay="0.3s">
-                    <a href="https://www.youtube.com/@ReNothinggg" target="_blank" class="hover:text-gray-300"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@renothingg" target="_blank" class="hover:text-pink-500"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://steamcommunity.com/id/Arbuzekkk" target="_blank" class="hover:text-blue-400"><i class="fab fa-steam"></i></a>
-                    <a href="https://t.me/ReNothinggTube" target="_blank" class="hover:text-blue-500"><i class="fab fa-telegram"></i></a>
-                    <a href="https://t.me/ReNothingg" target="_blank" class="hover:text-blue-500"><i class="fab fa-telegram"></i></a>
-                    <a href="https://x.com/BLOOTBER515" target="_blank" class="hover:text-gray-400"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://github.com/ReNothingg" target="_blank" class="hover:text-gray-300"><i class="fab fa-github"></i></a>
-                    <a href="https://discord.com/invite/uAMAmUgKTD" target="_blank" class="hover:text-gray-300"><i class="fab fa-discord"></i></a>
+                <div class="social-links animate-on-scroll fade-in" data-animation-delay="0.3s">
+                    <a href="https://www.youtube.com/@ReNothinggg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@renothingg" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://steamcommunity.com/id/Arbuzekkk" target="_blank" aria-label="Steam"><i class="fab fa-steam"></i></a>
+                    <a href="https://t.me/ReNothinggTube" target="_blank" aria-label="Telegram Channel"><i class="fab fa-telegram"></i></a>
+                    <a href="https://t.me/ReNothingg" target="_blank" aria-label="Telegram Profile"><i class="fab fa-telegram"></i></a>
+                    <a href="https://x.com/BLOOTBER515" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/ReNothingg" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.com/invite/uAMAmUgKTD" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </section>
