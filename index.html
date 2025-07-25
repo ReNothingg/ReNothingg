@@ -9,18 +9,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <meta property="og:title" content="Код, игры и ИИ — работаю над тем, что будет завтра. Или нет."/>
+    <title>ReNothingg</title>
+    <meta name="title" content="ReNothingg" />
+    <meta name="description" content="Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей." />
+
+    <meta property="og:title" content="Код, игры и ИИ — работаю над тем, что будет завтра. Или нет." />
     <meta property="og:description" content="Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей." />
-    <meta property="og:image" content="index/hero-banner.jpg" />
+    <meta property="og:image" content="index\hero-banner.jpg" />
     <meta property="og:url" content="https://renothingg.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="ReNothingg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ReNothingg" />
+    <meta name="twitter:title" content="Код, игры и ИИ — работаю над тем, что будет завтра. Или нет." />
+    <meta name="twitter:description" content="Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей." />
+    <meta name="twitter:image" content="index\hero-banner.jpg" />
+
 </head>
 <body>
     <div class="cursor-dot-outline"></div>
     <div class="cursor-dot"></div>
 
-    <header>
+    <header id="main-header">
         <div class="container header-container">
             <div class="logo-area">
                 <a href="#" class="logo-link"><h1 class="logo">ReNothingg</h1></a>
@@ -48,13 +59,12 @@
             <div class="hero-background"></div>
             <div class="hero-content container">
                 <h2 class="hero-title">ReNothingg</h2>
-                <h3 class="hero-subtitle">Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей.</h3>
             </div>
         </section>
 
         <section id="about" data-section-title="Философия и код">
           <div class="container about-container">
-            <div class="about-text">
+            <div class="about-text animate-on-scroll fade-in-up">
               <h3 class="section-title">Философия и код</h3>
               <p>Привет. Меня зовут Паша. Я разрабатываю проекты на стыке технологий, творчества и смысла. С детства увлечён кодом, системами и тем, как всё устроено — от нейросетей и видеокарт до внутренностей смартфонов. Люблю разбирать, исследовать и собирать что-то своё.</p>
               <p>Программирование для меня — это не просто профессия. Это способ понимать себя, взаимодействовать с миром и оставлять после себя что-то полезное. Мне важно, чтобы технологии помогали людям, а не заменяли их.</p>
@@ -64,8 +74,8 @@
               <p>Помимо технологий, люблю музыку — особенно атмосферную: ambient, downtempo, synth-pop, меланхоличную электронику. Она помогает сосредоточиться и глубже чувствовать. Иногда играю на гитаре, иногда просто залипаю в игры с идеей — вроде <em>Detroit: Become Human</em> или <em>The Stanley Parable</em>.</p>
               <p>Если ты тоже увлечён созданием чего-то настоящего — пиши. Буду рад пообщаться, обсудить идеи или просто поговорить.</p>
             </div>
-            <div class="about-quote">
-              <p>"Мне важно, чтобы технологии помогали людям, а не заменяли их."</p>
+            <div class="about-quote animate-on-scroll fade-in-up" data-animation-delay="0.2">
+              <p>Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей.</p>
             </div>
           </div>
         </section>
@@ -76,44 +86,44 @@
                     <div class="project-grid-title">
                         <h3 class="section-title">Мои Проекты</h3>
                     </div>
-                    <a href="https://synvexai.github.io/SynvexAI/" target="_blank" class="project-card">
+                    <a href="https://synvexai.github.io/SynvexAI/" target="_blank" class="project-card interactive-card">
                         <div class="project-image-container">
-                            <img src="index/synvexai.jpg" alt="synvexai">
+                            <img src="index/synvexai.jpg" alt="SynvexAI">
                         </div>
                         <div class="project-info">
                             <h4>SynvexAI</h4>
                             <p>Intelligent products at the intersection of neural networks, cognitive science and human-centered design.</p>
                         </div>
                     </a>
-                    <div class="project-card game-card">
-                        <a href="FCube\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт [F]CUBE">
-                            <img src="FCube\fcube.jpg" alt="[F]CUBE баннер" class="game-banner-img">
-                        </a>
+                    <a href="FCube\index.html" target="_blank" class="project-card interactive-card">
+                        <div class="project-image-container">
+                            <img src="FCube\fcube.jpg" alt="[F]CUBE баннер">
+                        </div>
                         <div class="project-info">
                             <h4>[F]CUBE</h4>
                             <p>A unique sandbox that lacks the usual restrictions, providing unlimited opportunities for creativity.</p>
-                            <span class="card-button">Скачать</span>
+                            <span class="card-button">Подробнее</span>
                         </div>
-                    </div>
-                    <div class="project-card game-card">
-                        <a href="FloppaRun\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт Floppa Run">
-                            <img src="FloppaRun\assets\favicon.png" alt="Floppa Run баннер" class="game-banner-img">
-                        </a>
+                    </a>
+                    <a href="FloppaRun\index.html" target="_blank" class="project-card interactive-card">
+                        <div class="project-image-container">
+                            <img src="FloppaRun\assets\favicon.png" alt="Floppa Run баннер">
+                        </div>
                         <div class="project-info">
                             <h4>Floppa Run</h4>
                             <p>Захватывающий бесконечный раннер, где вы управляете Шлёпой, уворачиваясь от препятствий!</p>
-                            <span class="card-button">Скачать</span>
+                            <span class="card-button">Подробнее</span>
                         </div>
-                    </div>
-                    <div class="project-card game-card">
-                        <a href="Blender\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт... ну вы поняли">
-                            <img src="Blender\render\spasaasasas.png" alt="Blender Works Banner" class="game-banner-img">
-                        </a>
+                    </a>
+                    <a href="Blender\index.html" target="_blank" class="project-card interactive-card">
+                        <div class="project-image-container">
+                            <img src="Blender\render\spasaasasas.png" alt="Blender Works Banner">
+                        </div>
                         <div class="project-info">
                             <h4>Работы в Blender</h4>
                             <p>Проекты разного уровня: от простых форм до детализированных сцен. Скорее всего, бесполезно. Серьезно.</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -121,9 +131,9 @@
         <section id="github-projects" data-section-title="GitHub Репозитории">
             <div class="container">
                 <h3 class="section-title animate-on-scroll fade-in">Open Source & GitHub</h3>
-                <div id="github-repos-container" class="project-grid"></div>
+                <div id="github-repos-container" class="bento-grid"></div>
                 <p class="github-profile-link animate-on-scroll fade-in">
-                    <a href="https://github.com/ReNothingg" target="_blank" id="view-all-github-link">
+                    <a href="https://github.com/ReNothingg" target="_blank" class="magnetic-element">
                         Больше на GitHub → 
                     </a>
                 </p>
@@ -141,14 +151,14 @@
                             <p>Draxon — это красивая, продуманная и "магическая" утилита для терминала, созданная для скачивания видео и аудио.</p>
                         </div>
                     </li>
-                    <li class="animate-on-scroll fade-in-up">
+                    <li class="animate-on-scroll fade-in-up" data-animation-delay="0.1">
                         <div class="news-content">
                             <span class="news-date">02.07.2025</span>
                             <h4 class="news-title"><a href="https://youtu.be/EAtrIKG9bVY?si=rvvhiuHfNlCX2TPm">Floppa RUN — [Randomverse] — Showcase</a></h4>
                             <p>В этом этом режиме каждый запуск — новая трасса, построенная на ходу. Никаких шаблонов. Только рандом. Только Floppa.</p>
                         </div>
                     </li>
-                    <li class="animate-on-scroll fade-in-up">
+                    <li class="animate-on-scroll fade-in-up" data-animation-delay="0.2">
                         <div class="news-content">
                             <span class="news-date">28.06.2025</span>
                             <h4 class="news-title">Перенос на новую версию Unity</h4>
@@ -156,7 +166,7 @@
                         </div>
                     </li>
                 </ul>
-                <a href="index\news.html" class="view-more-link animate-on-scroll zoom-in" data-animation-delay="0.2s">Больше новостей</a>
+                <a href="index\news.html" class="view-more-link animate-on-scroll zoom-in magnetic-element" data-animation-delay="0.2s">Больше новостей</a>
             </div>
         </section>
 
@@ -164,16 +174,16 @@
             <div class="container">
                 <h3 class="section-title animate-on-scroll fade-in">Связаться со мной</h3>
                 <p class="animate-on-scroll fade-in" data-animation-delay="0.1s">Готов обсудить ваши идеи или предложения о сотрудничестве.</p>
-                <a href="mailto:renothingg@gmail.com" class="email-link animate-on-scroll zoom-in" data-animation-delay="0.2s">renothingg@gmail.com</a>
+                <a href="mailto:renothingg@gmail.com" class="email-link animate-on-scroll zoom-in magnetic-element" data-animation-delay="0.2s">renothingg@gmail.com</a>
                 <div class="social-links animate-on-scroll fade-in" data-animation-delay="0.3s">
-                    <a href="https://www.youtube.com/@ReNothinggg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.tiktok.com/@renothingg" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://steamcommunity.com/id/Arbuzekkk" target="_blank" aria-label="Steam"><i class="fab fa-steam"></i></a>
-                    <a href="https://t.me/ReNothinggTube" target="_blank" aria-label="Telegram Channel"><i class="fab fa-telegram"></i></a>
-                    <a href="https://t.me/ReNothingg" target="_blank" aria-label="Telegram Profile"><i class="fab fa-telegram"></i></a>
-                    <a href="https://x.com/BLOOTBER515" target="_blank" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-                    <a href="https://github.com/ReNothingg" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://discord.com/invite/uAMAmUgKTD" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    <a href="https://www.youtube.com/@ReNothinggg" target="_blank" aria-label="YouTube" class="magnetic-element"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@renothingg" target="_blank" aria-label="TikTok" class="magnetic-element"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://steamcommunity.com/id/Arbuzekkk" target="_blank" aria-label="Steam" class="magnetic-element"><i class="fab fa-steam"></i></a>
+                    <a href="https://t.me/ReNothinggTube" target="_blank" aria-label="Telegram Канал" class="magnetic-element"><i class="fab fa-telegram"></i></a>
+                    <a href="https://t.me/ReNothingg" target="_blank" aria-label="Telegram Профиль" class="magnetic-element"><i class="fab fa-telegram"></i></a>
+                    <a href="https://x.com/BLOOTBER515" target="_blank" aria-label="X (Twitter)" class="magnetic-element"><i class="fab fa-x-twitter"></i></a>
+                    <a href="https://github.com/ReNothingg" target="_blank" aria-label="GitHub" class="magnetic-element"><i class="fab fa-github"></i></a>
+                    <a href="https://discord.com/invite/uAMAmUgKTD" target="_blank" aria-label="Discord" class="magnetic-element"><i class="fab fa-discord"></i></a>
                 </div>
             </div>
         </section>

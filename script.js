@@ -1,98 +1,70 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-dot-outline');
-    const magneticLinks = document.querySelectorAll('.magnetic-link');
-    const magneticStrength = 0.4;
-
-    window.addEventListener('mousemove', function (e) {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-
-        cursorOutline.animate({
-            left: `${posX}px`,
-            top: `${posY}px`
-        }, { duration: 500, fill: 'forwards' });
-
-        cursorDot.style.opacity = '1';
-        cursorOutline.style.opacity = '1';
-    });
-
-    document.body.addEventListener('mouseleave', () => {
-        cursorDot.style.opacity = '0';
-        cursorOutline.style.opacity = '0';
-    });
-
-    const hoverables = document.querySelectorAll('a, button, .project-card, .repo-card');
-    hoverables.forEach(el => {
-        el.addEventListener('mouseover', () => document.body.classList.add('cursor-hovered'));
-        el.addEventListener('mouseout', () => document.body.classList.remove('cursor-hovered'));
-    });
-
-    magneticLinks.forEach(link => {
-        link.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            this.style.transform = `translate(${x * magneticStrength}px, ${y * magneticStrength}px)`;
-        });
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translate(0,0)';
-        });
-    });
-
-
-    const heroTitle = document.querySelector('.hero-title');
-    const heroBg = document.querySelector('.hero-background');
-    const horizontalSection = document.querySelector('#projects');
-    const horizontalTrack = document.querySelector('.horizontal-scroll-track');
-
-    function handleScroll() {
-        const scrollY = window.scrollY;
-
-        if (heroTitle && heroBg) {
-            heroTitle.style.transform = `translateY(${scrollY * 0.3}px)`;
-            heroBg.style.transform = `scale(1.1) translateY(${scrollY * 0.4}px)`;
-        }
-
-        if (horizontalSection && horizontalTrack && window.innerWidth > 768) {
-            const sectionTop = horizontalSection.offsetTop;
-            const sectionHeight = horizontalSection.offsetHeight;
-            const trackWidth = horizontalTrack.scrollWidth;
-            const windowWidth = window.innerWidth;
-
-            if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight - window.innerHeight) {
-                let progress = (scrollY - sectionTop) / (sectionHeight - window.innerHeight);
-                let move = progress * (trackWidth - windowWidth);
-                horizontalTrack.style.transform = `translateX(-${move}px)`;
-            }
-        }
-    }
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    
-    const currentYearElement = document.getElementById('currentYear');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) {
+        document.body.classList.add('touch-device');
     }
 
-    const header = document.querySelector('header');
+    if (!isTouchDevice) {
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-dot-outline');
+        
+        window.addEventListener('mousemove', function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: 'forwards' });
+        });
+
+        const hoverables = document.querySelectorAll('a, button, .interactive-card, .repo-card, .news-list li');
+        hoverables.forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hovered'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hovered'));
+        });
+
+        const magneticElements = document.querySelectorAll('.magnetic-link, .magnetic-element');
+        const magneticStrength = 0.4;
+        magneticElements.forEach(elem => {
+            elem.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                this.style.transform = `translate(${x * magneticStrength}px, ${y * magneticStrength}px) scale(1.1)`;
+                this.style.transition = 'transform 0.1s linear';
+            });
+            elem.addEventListener('mouseleave', function() {
+                this.style.transform = 'translate(0,0) scale(1)';
+                this.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+            });
+        });
+    }
+
+    const header = document.getElementById('main-header');
     const stickyTitleElement = document.getElementById('sticky-section-title');
     const sections = Array.from(document.querySelectorAll('main section[data-section-title]'));
-    const navLinks = document.querySelectorAll('header nav ul li a');
-    let headerHeight = 100;
+    const navLinks = document.querySelectorAll('#main-nav a');
+    let headerHeight = header.offsetHeight;
 
-    function updateStickyHeaderAndNav() {
-        const scrollPosition = window.scrollY;
+    function handleHeaderAndNav() {
+        const scrollY = window.scrollY;
+
+        if (scrollY > window.innerHeight * 0.8) {
+            header.classList.add('is-visible');
+        } else {
+            header.classList.remove('is-visible');
+        }
+
         let newActiveSectionId = null;
         let newActiveSectionTitle = "";
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - headerHeight - 50;
-            if (scrollPosition >= sectionTop) {
+            if (scrollY >= sectionTop) {
                 newActiveSectionTitle = section.getAttribute('data-section-title');
                 newActiveSectionId = section.id;
             }
@@ -105,18 +77,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (newActiveSectionId && link.getAttribute('href') === `#${newActiveSectionId}`) {
+            const linkHref = link.getAttribute('href');
+            if (newActiveSectionId && linkHref === `#${newActiveSectionId}`) {
                 link.classList.add('active');
             }
         });
     }
 
-    const menuToggle = document.getElementById('menu-toggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => header.classList.toggle('nav-open'));
-        document.querySelectorAll('#main-nav a').forEach(link => {
-            link.addEventListener('click', () => header.classList.remove('nav-open'));
-        });
+    const heroTitle = document.querySelector('.hero-title');
+    const heroBg = document.querySelector('.hero-background');
+    const horizontalSection = document.querySelector('#projects');
+    const horizontalTrack = document.querySelector('.horizontal-scroll-track');
+
+    function handleScrollEffects() {
+        const scrollY = window.scrollY;
+
+        if (heroTitle && heroBg) {
+            heroTitle.style.transform = `translateY(${scrollY * 0.3}px)`;
+            heroBg.style.transform = `scale(1.1) translateY(${scrollY * 0.4}px)`;
+        }
+
+        if (horizontalSection && horizontalTrack && window.innerWidth > 992) {
+            const sectionTop = horizontalSection.offsetTop;
+            const sectionHeight = horizontalSection.offsetHeight;
+            const trackWidth = horizontalTrack.scrollWidth;
+            const windowWidth = window.innerWidth;
+
+            if (scrollY >= sectionTop && scrollY <= sectionTop + sectionHeight - window.innerHeight) {
+                let progress = (scrollY - sectionTop) / (sectionHeight - window.innerHeight);
+                let move = progress * (trackWidth - windowWidth);
+                horizontalTrack.style.transform = `translateX(-${move}px)`;
+            }
+        }
     }
 
     const observer = new IntersectionObserver((entries) => {
@@ -131,36 +123,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-    window.addEventListener('scroll', updateStickyHeaderAndNav, { passive: true });
-    updateStickyHeaderAndNav();
-
     const githubUsername = "ReNothingg";
     const reposContainer = document.getElementById('github-repos-container');
     async function fetchGitHubRepos() {
         if (!reposContainer) return;
         reposContainer.innerHTML = '<p>Загрузка репозиториев...</p>';
         try {
-            const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=pushed&direction=desc&per_page=6`);
+            const response = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=pushed&direction=desc&per_page=7`);
             if (!response.ok) throw new Error('Network response was not ok');
             const repos = await response.json();
             reposContainer.innerHTML = '';
-            repos.forEach(repo => {
+            repos.forEach((repo, index) => {
                 const repoCard = document.createElement('a');
-                repoCard.className = 'repo-card';
+                repoCard.className = 'repo-card animate-on-scroll fade-in-up';
+                if (index === 0) repoCard.classList.add('bento-item-large');
+                if (index === 3) repoCard.classList.add('bento-item-wide');
+
                 repoCard.href = repo.html_url;
                 repoCard.target = '_blank';
+                repoCard.rel = 'noopener noreferrer';
                 repoCard.innerHTML = `
-                    <div>
+                    <div class="repo-card-glow"></div>
+                    <div class="repo-card-content">
                         <h4>${repo.name}</h4>
                         <p class="repo-description">${repo.description || '<i>Описание отсутствует.</i>'}</p>
-                    </div>
-                    <div class="repo-meta">
-                        ${repo.language ? `<span>${repo.language}</span>` : ''}
-                        <span>★ ${repo.stargazers_count}</span>
-                        <span>Forks: ${repo.forks_count}</span>
+                        <div class="repo-meta">
+                            ${repo.language ? `<span><span class="repo-lang-color" style="background-color: #fff"></span> ${repo.language}</span>` : ''}
+                            <span>★ ${repo.stargazers_count}</span>
+                            <span>⑂ ${repo.forks_count}</span>
+                        </div>
                     </div>
                 `;
                 reposContainer.appendChild(repoCard);
+                observer.observe(repoCard);
             });
         } catch (error) {
             reposContainer.innerHTML = '<p>Не удалось загрузить репозитории.</p>';
@@ -169,16 +164,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if (reposContainer) fetchGitHubRepos();
 
+    const subtitle = document.querySelector('.animated-subtitle');
+    if (subtitle) {
+        const text = subtitle.textContent;
+        subtitle.innerHTML = '';
+        text.split(' ').forEach(word => {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'word';
+            wordSpan.innerHTML = `${word.split('').map(char => `<span>${char}</span>`).join('')} `;
+            subtitle.appendChild(wordSpan);
+        });
+    }
+
+    const menuToggle = document.getElementById('menu-toggle');
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            document.body.classList.toggle('nav-open');
+            header.classList.toggle('nav-open');
+        });
+        document.querySelectorAll('#main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.body.classList.remove('nav-open');
+                header.classList.remove('nav-open');
+            });
+        });
+    }
 
     const scrollToTopBtn = document.getElementById('scrollToTopBtn');
     if (scrollToTopBtn) {
         window.addEventListener('scroll', () => {
             const shouldBeVisible = window.scrollY > 300;
-            scrollToTopBtn.style.display = shouldBeVisible ? "flex" : "none";
             scrollToTopBtn.style.opacity = shouldBeVisible ? "1" : "0";
+            scrollToTopBtn.style.pointerEvents = shouldBeVisible ? "auto" : "none";
         }, { passive: true });
         scrollToTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+
+    window.addEventListener('scroll', () => {
+        handleHeaderAndNav();
+        handleScrollEffects();
+    }, { passive: true });
+
+    handleHeaderAndNav();
 });
