@@ -1,32 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const hobbiesData = {
         'knitting': {
             title: 'Вязание',
             description: 'Учусь вязанию. Это помогает мне расслабиться и сосредоточиться на процессе создания. Я экспериментирую с различными узорами и техниками, и это приносит мне удовольствие.',
+            links: [],
             timeline: [
-                { img: 'https://images.unsplash.com/photo-1595015486923-b924757c6b97?q=80&w=600', caption: '2024: Мой первый шарф. Неровный, но свой.' },
-                { img: 'https://images.unsplash.com/photo-1602484742401-20423c727572?q=80&w=600', caption: '2024: Осваиваю круговое вязание на примере шапки.' }
+                { type: 'image', src: 'knitting/1.jpg', caption: '2025: Змея. Вот такая получилась.' },
             ],
             audioTracks: []
         },
+
+
+
         'music': {
             title: 'Музыка и FL Studio',
             description: 'Изучаю создание музыки в FL Studio. Изучал с целью написания музыки для игр. Я экспериментирую с различными жанрами и техниками, и это приносит мне радость. И смех.',
-            timeline: [
-                { img: 'https://images.unsplash.com/photo-1619983081593-e2235bf58758?q=80&w=600', caption: '2023: Первые шаги. Разобрался с интерфейсом и секвенсором.' },
-                { img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600', caption: '2024: Эксперименты с синтезаторами и написание первой мелодии.' }
+            links: [
+                { url: 'https://soundcloud.com/renothingg', text: 'SoundCloud', icon: 'fab fa-soundcloud' }
             ],
+            timeline: [],
             audioTracks: [
-                { src: 'music1.mp3', title: 'Первый набросок' },
-                { src: 'music2.ogg', title: 'Мелодия для главного меню' }
+                {
+                    src: 'https://soundcloud.com/renothing/runner-theme',
+                    title: 'Runner Theme'
+                },
+                {
+                    src: 'https://soundcloud.com/renothing/gear-theme',
+                    title: 'Gear Theme'
+                },
+                {
+                    src: 'https://soundcloud.com/renothing/flying-theme',
+                    title: 'Flying Theme'
+                },
             ]
         },
+
+
+
         'video': {
             title: 'Видеомонтаж',
-            description: 'Изучаю основы видеомонтажа. Хочу научиться создавать качественные видео для своих проектов. Экспериментирую с различными стилями и техниками. Вообще я начал его изучать для создания всякх водосов в SynvexAI, но потом понял, что это может пригодиться и в других проектах. Потом пошел на юьюб и вот.',
+            description: 'Изучаю основы видеомонтажа. Хочу научиться создавать качественные видео для своих проектов. Экспериментирую с различными стилями и техниками. Вообще я начал его изучать для создания всяких видосов в SynvexAI, но потом понял, что это может пригодиться и в других проектах. Потом пошел на ютуб и вот.',
+            links: [
+                { url: 'https://www.youtube.com/@ReNothinggg', text: 'Мой YouTube', icon: 'fab fa-youtube' },
+            ],
             timeline: [
-                { img: 'https://images.unsplash.com/photo-1619983081593-e2235bf58758?q=80&w=600', caption: '2023: Первые шаги. Разобрался с интерфейсом и секвенсором.' },
-                { img: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=600', caption: '2024: Эксперименты с синтезаторами и написание первой мелодии.' }
+                { type: 'youtube', videoId: 'SU5lVPNFXbE', caption: 'AI Learns Geometry Dash' },
+                { type: 'youtube', videoId: 'XlHLGmczQa0', caption: 'Floppa RUN - Theme' },
+                { type: 'youtube', videoId: 'dChuK_ugc5I', caption: 'Unity за 15 минут: делаем Flappy Bird под Android' },
+                { type: 'youtube', videoId: 'biQXemAezUI', caption: '5 Ways to Use AI Right Now #ai #coding #code #gpu #SynvexAI #GPT #funny' },
+                { type: 'youtube', videoId: 'uoTeVcbG1gw', caption: 'Unity за 9 минут: Перемещение курсором' },
+                { type: 'youtube', videoId: 'EAtrIKG9bVY', caption: 'Floppa RUN — [Randomverse] — Showcase' }
             ],
             audioTracks: []
         }
@@ -37,20 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
-    
+    const linksSection = document.getElementById('modal-links-section');
+    const linksContainer = document.getElementById('modal-links-container');
     const audioSection = document.getElementById('modal-audio-section');
     const audioContainer = document.getElementById('modal-audio-container');
-
     const timelineSection = document.getElementById('modal-timeline-section');
     const timelineContainer = document.getElementById('modal-timeline');
-    
     const modalCloseBtn = document.getElementById('modalCloseBtn');
     const hobbyCards = document.querySelectorAll('.hobby-card');
 
     function formatTime(seconds) {
-        const minutes = Math.floor(seconds / 60);
+        const mins = Math.floor(seconds / 60);
         const secs = Math.floor(seconds % 60);
-        return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     }
 
     function populateModal(hobbyId) {
@@ -60,61 +83,76 @@ document.addEventListener('DOMContentLoaded', () => {
         modalTitle.textContent = data.title;
         modalDescription.textContent = data.description;
         
+        linksContainer.innerHTML = '';
         audioContainer.innerHTML = '';
         timelineContainer.innerHTML = '';
+
+        if (data.links && data.links.length > 0) {
+            linksSection.style.display = 'block';
+            data.links.forEach(link => {
+                const linkBtn = document.createElement('a');
+                linkBtn.className = 'modal-link-btn';
+                linkBtn.href = link.url;
+                linkBtn.target = '_blank';
+                linkBtn.rel = 'noopener noreferrer';
+                linkBtn.innerHTML = `<i class="${link.icon}"></i> ${link.text}`;
+                linksContainer.appendChild(linkBtn);
+            });
+        } else {
+            linksSection.style.display = 'none';
+        }
 
         if (data.audioTracks && data.audioTracks.length > 0) {
             audioSection.style.display = 'block';
             data.audioTracks.forEach(track => {
-                const player = document.createElement('div');
-                player.className = 'audio-player';
+                const isSoundCloud = track.src.includes('soundcloud.com/player');
+                const playerWrapper = document.createElement('div');
 
-                const audio = new Audio(track.src);
-
-                player.innerHTML = `
-                    <button class="play-pause-btn"><i class="fas fa-play"></i></button>
-                    <div class="audio-info">
-                        <div class="audio-title">${track.title}</div>
-                        <div class="progress-container">
-                            <div class="progress-bar"></div>
+                if (isSoundCloud) {
+                    playerWrapper.className = 'soundcloud-embed-container';
+                    playerWrapper.innerHTML = `
+                        <iframe scrolling="no" frameborder="no" allow="autoplay" src="${track.src}"></iframe>
+                        <p>${track.title}</p>
+                    `;
+                } else {
+                    playerWrapper.className = 'audio-player';
+                    const audio = new Audio(track.src);
+                    
+                    playerWrapper.innerHTML = `
+                        <button class="play-pause-btn"><i class="fas fa-play"></i></button>
+                        <div class="audio-info">
+                            <div class="audio-title">${track.title}</div>
+                            <div class="progress-container">
+                                <div class="progress-bar"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="time-display">00:00 / 00:00</div>
-                `;
-                audioContainer.appendChild(player);
+                        <div class="time-display">00:00 / 00:00</div>
+                    `;
+                    
+                    const playBtn = playerWrapper.querySelector('.play-pause-btn');
+                    const playIcon = playBtn.querySelector('i');
+                    const progressBar = playerWrapper.querySelector('.progress-bar');
+                    const progressContainer = playerWrapper.querySelector('.progress-container');
+                    const timeDisplay = playerWrapper.querySelector('.time-display');
 
-                const playBtn = player.querySelector('.play-pause-btn');
-                const playIcon = playBtn.querySelector('i');
-                const progressBar = player.querySelector('.progress-bar');
-                const progressContainer = player.querySelector('.progress-container');
-                const timeDisplay = player.querySelector('.time-display');
-
-                playBtn.addEventListener('click', () => {
-                    if (audio.paused) {
-                        audio.play();
-                        playIcon.className = 'fas fa-pause';
-                    } else {
-                        audio.pause();
-                        playIcon.className = 'fas fa-play';
-                    }
-                });
-
-                audio.addEventListener('timeupdate', () => {
-                    const progressPercent = (audio.currentTime / audio.duration) * 100;
-                    progressBar.style.width = `${progressPercent}%`;
-                    timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration || 0)}`;
-                });
-
-                audio.addEventListener('ended', () => {
-                    playIcon.className = 'fas fa-play';
-                    progressBar.style.width = '0%';
-                });
-
-                progressContainer.addEventListener('click', (e) => {
-                    const width = progressContainer.clientWidth;
-                    const clickX = e.offsetX;
-                    audio.currentTime = (clickX / width) * audio.duration;
-                });
+                    playBtn.addEventListener('click', () => {
+                        if (audio.paused) audio.play(); else audio.pause();
+                    });
+                    audio.addEventListener('play', () => playIcon.className = 'fas fa-pause');
+                    audio.addEventListener('pause', () => playIcon.className = 'fas fa-play');
+                    audio.addEventListener('ended', () => playIcon.className = 'fas fa-play');
+                    audio.addEventListener('timeupdate', () => {
+                        const progress = audio.duration ? (audio.currentTime / audio.duration) * 100 : 0;
+                        progressBar.style.width = `${progress}%`;
+                        timeDisplay.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration || 0)}`;
+                    });
+                    progressContainer.addEventListener('click', (e) => {
+                        if (audio.duration) {
+                            audio.currentTime = (e.offsetX / progressContainer.clientWidth) * audio.duration;
+                        }
+                    });
+                }
+                audioContainer.appendChild(playerWrapper);
             });
         } else {
             audioSection.style.display = 'none';
@@ -125,10 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
             data.timeline.forEach(item => {
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
-                timelineItem.innerHTML = `
-                    <img src="${item.img}" alt="${item.caption}">
-                    <p>${item.caption}</p>
-                `;
+                if (item.type === 'youtube') {
+                    timelineItem.innerHTML = `<div class="video-embed-container"><iframe src="https://www.youtube.com/embed/${item.videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><p>${item.caption}</p>`;
+                } else {
+                    timelineItem.innerHTML = `<img src="${item.src}" alt="${item.caption}"><p>${item.caption}</p>`;
+                }
                 timelineContainer.appendChild(timelineItem);
             });
         } else {
@@ -143,27 +182,17 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         document.body.classList.remove('modal-open');
         audioContainer.querySelectorAll('audio').forEach(audio => audio.pause());
+        timelineContainer.querySelectorAll('iframe').forEach(iframe => iframe.src = iframe.src);
+        audioContainer.querySelectorAll('iframe').forEach(iframe => iframe.src = iframe.src);
     }
 
-    hobbyCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const hobbyId = card.dataset.hobbyId;
-            populateModal(hobbyId);
-            openModal();
-        });
-    });
+    hobbyCards.forEach(card => card.addEventListener('click', () => {
+        const hobbyId = card.dataset.hobbyId;
+        populateModal(hobbyId);
+        openModal();
+    }));
 
     modalCloseBtn.addEventListener('click', closeModal);
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && document.body.classList.contains('modal-open')) {
-            closeModal();
-        }
-    });
+    modal.addEventListener('click', (e) => e.target === modal && closeModal());
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && document.body.classList.contains('modal-open') && closeModal());
 });
