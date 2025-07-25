@@ -3,12 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderFolderPath = 'render/';
 
     const imageFiles = [
+        '0001-0160.mkv',
         'gman-test.png',
         'LiquidGlass.png',
         'FHUMAN.png',
         'gribochek.png',
         'Ice.png',
+        'spaceAnim0001-0250.mkv',
         'watermelon.png',
+        '0001-0120.mkv',
         'hum.png',
         'lololowka.png',
         'NWithAmNam.png',
@@ -20,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'NSkirt.png',
         'Gamepad.png',
         'TextMatrialsLight.png',
+        
     ];
 
     const lightbox = document.getElementById('lightbox');
