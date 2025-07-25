@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
 
 
+        //https://soundcloud.com/oembed?format=json&url=СЮДА_ССЫЛКУ
 
         'music': {
             title: 'Музыка и FL Studio',
@@ -22,16 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
             timeline: [],
             audioTracks: [
                 {
-                    src: 'https://soundcloud.com/renothing/runner-theme',
-                    title: 'Runner Theme'
+                    title: 'Runner Theme',
+                    src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2111368644&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 },
                 {
-                    src: 'https://soundcloud.com/renothing/gear-theme',
-                    title: 'Gear Theme'
+                    title: 'Gear Theme',
+                    src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2111369292&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
+                    
                 },
                 {
-                    src: 'https://soundcloud.com/renothing/flying-theme',
-                    title: 'Flying Theme'
+                    title: 'Flying Theme',
+                    src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2111369487&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true',
                 },
             ]
         },

@@ -31,7 +31,6 @@ body.modal-open {
     border: 1px solid var(--color-border);
     border-radius: var(--global-radius);
     overflow: hidden;
-    cursor: pointer;
     transition: all 0.4s var(--transition-easing);
 }
 
@@ -132,7 +131,6 @@ body.modal-open .modal-content {
     color: var(--color-text-muted);
     font-size: 2.5rem;
     line-height: 1;
-    cursor: pointer;
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -217,7 +215,6 @@ body.modal-open .modal-content {
     border-radius: 50%;
     color: var(--color-text);
     font-size: 16px;
-    cursor: pointer;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -247,7 +244,6 @@ body.modal-open .modal-content {
     border-radius: 10px;
     height: 6px;
     width: 100%;
-    cursor: pointer;
 }
 
 .progress-bar {
