@@ -6,7 +6,7 @@
     <title>ReNothingg</title>
     <link rel="icon" href="icon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
     <meta property="og:title" content="Код, игры и ИИ — работаю над тем, что будет завтра. Или нет."/>
@@ -17,6 +17,9 @@
     <meta property="og:site_name" content="ReNothingg" />
 </head>
 <body>
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+
     <header>
         <div class="container header-container">
             <div class="logo-area">
@@ -25,11 +28,11 @@
             </div>
             <nav id="main-nav">
                 <ul>
-                    <li><a href="#about">Обо мне</a></li>
-                    <li><a href="#projects">Проекты</a></li>       
-                    <li><a href="#github-projects">GitHub</a></li>
-                    <li><a href="#news">Новости</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#about" class="magnetic-link">Обо мне</a></li>
+                    <li><a href="#projects" class="magnetic-link">Проекты</a></li>       
+                    <li><a href="#github-projects" class="magnetic-link">GitHub</a></li>
+                    <li><a href="#news" class="magnetic-link">Новости</a></li>
+                    <li><a href="#contact" class="magnetic-link">Контакты</a></li>
                 </ul>
             </nav>
             <button id="menu-toggle" aria-label="Открыть меню">
@@ -42,17 +45,17 @@
 
     <main>
         <section id="hero">
-            <canvas id="hero-canvas"></canvas>
+            <div class="hero-background"></div>
             <div class="hero-content container">
-                <h2 class="animate-on-scroll fade-in-up">ReNothingg</h2>
-                <h3 class="subtitle animate-on-scroll fade-in-up" data-animation-delay="0.2s">Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей.</h3>
+                <h2 class="hero-title">ReNothingg</h2>
+                <h3 class="hero-subtitle">Я просто хочу, чтобы технологии были ближе каждому — доступные, понятные и гибкие. Чтобы каждый мог использовать их для своих идей.</h3>
             </div>
         </section>
 
-        <section id="about" data-section-title="Обо мне">
-          <div class="container">
-            <h3 class="animate-on-scroll fade-in">Обо мне</h3>
-            <div class="about-me animate-on-scroll fade-in" data-animation-delay="0.2s">
+        <section id="about" data-section-title="Философия и код">
+          <div class="container about-container">
+            <div class="about-text">
+              <h3 class="section-title">Философия и код</h3>
               <p>Привет. Меня зовут Паша. Я разрабатываю проекты на стыке технологий, творчества и смысла. С детства увлечён кодом, системами и тем, как всё устроено — от нейросетей и видеокарт до внутренностей смартфонов. Люблю разбирать, исследовать и собирать что-то своё.</p>
               <p>Программирование для меня — это не просто профессия. Это способ понимать себя, взаимодействовать с миром и оставлять после себя что-то полезное. Мне важно, чтобы технологии помогали людям, а не заменяли их.</p>
               <p>Я веду сайт, публикую гайды, делюсь проектами на GitHub и стараюсь быть частью open-source-сообщества. Не ради лайков, а потому что верю: знания должны быть свободными, а развитие — доступным.</p>
@@ -61,53 +64,54 @@
               <p>Помимо технологий, люблю музыку — особенно атмосферную: ambient, downtempo, synth-pop, меланхоличную электронику. Она помогает сосредоточиться и глубже чувствовать. Иногда играю на гитаре, иногда просто залипаю в игры с идеей — вроде <em>Detroit: Become Human</em> или <em>The Stanley Parable</em>.</p>
               <p>Если ты тоже увлечён созданием чего-то настоящего — пиши. Буду рад пообщаться, обсудить идеи или просто поговорить.</p>
             </div>
+            <div class="about-quote">
+              <p>"Мне важно, чтобы технологии помогали людям, а не заменяли их."</p>
+            </div>
           </div>
         </section>
 
-
         <section id="projects" data-section-title="Мои Проекты">
-            <div class="container">
-                <h3>Мои Проекты</h3>
-                <div class="project-grid">
-                    <a href="https://synvexai.github.io/SynvexAI/" target="_blank" class="project-card animate-on-scroll fade-in-up">
+            <div class="horizontal-scroll-wrapper">
+                <div class="horizontal-scroll-track">
+                    <div class="project-grid-title">
+                        <h3 class="section-title">Мои Проекты</h3>
+                    </div>
+                    <a href="https://synvexai.github.io/SynvexAI/" target="_blank" class="project-card">
                         <div class="project-image-container">
                             <img src="index/synvexai.jpg" alt="synvexai">
                         </div>
                         <div class="project-info">
                             <h4>SynvexAI</h4>
-                            <p>SynvexAI is a commercial organization that creates intelligent products at the intersection of neural networks, cognitive science and human-centered design.</p>
+                            <p>Intelligent products at the intersection of neural networks, cognitive science and human-centered design.</p>
                         </div>
                     </a>
-
-                    <div class="game-card animate-on-scroll fade-in-up" data-animation-delay="0.05s">
+                    <div class="project-card game-card">
                         <a href="FCube\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт [F]CUBE">
                             <img src="FCube\fcube.jpg" alt="[F]CUBE баннер" class="game-banner-img">
                         </a>
-                        <div class="game-info">
-                            <h4 class="game-title">[F]CUBE</h4>
-                            <p class="game-description">[F]CUBE is a unique sandbox that lacks the usual restrictions, providing the player with unlimited opportunities for experimentation and creativity.</p>
-                            <a href="https://mega.nz/folder/yi5kTRQY#lITwqwxiTZGxq5625qfZ1A" download="FCube\FCube.zip" class="game-download-btn">Скачать</a>
+                        <div class="project-info">
+                            <h4>[F]CUBE</h4>
+                            <p>A unique sandbox that lacks the usual restrictions, providing unlimited opportunities for creativity.</p>
+                            <span class="card-button">Скачать</span>
                         </div>
                     </div>
-
-                    <div class="game-card animate-on-scroll fade-in-up" data-animation-delay="0.1s">
+                    <div class="project-card game-card">
                         <a href="FloppaRun\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт Floppa Run">
                             <img src="FloppaRun\assets\favicon.png" alt="Floppa Run баннер" class="game-banner-img">
                         </a>
-                        <div class="game-info">
-                            <h4 class="game-title">Floppa Run</h4>
-                            <p class="game-description">Захватывающий бесконечный раннер, где вы управляете Шлёпой, уворачиваясь от препятствий и собирая пельмени!</p>
-                            <a href="FloppaRun\FloppaRun.apk" download="FloppaRun.apk" class="game-download-btn">Скачать</a>
+                        <div class="project-info">
+                            <h4>Floppa Run</h4>
+                            <p>Захватывающий бесконечный раннер, где вы управляете Шлёпой, уворачиваясь от препятствий!</p>
+                            <span class="card-button">Скачать</span>
                         </div>
                     </div>
-
-                    <div class="game-card animate-on-scroll fade-in-up" data-animation-delay="0.15s">
+                    <div class="project-card game-card">
                         <a href="Blender\index.html" target="_blank" class="game-banner-link" aria-label="Перейти на сайт... ну вы поняли">
                             <img src="Blender\render\spasaasasas.png" alt="Blender Works Banner" class="game-banner-img">
                         </a>
-                        <div class="game-info">
-                            <h4 class="game-title">Работы в Blender</h4>
-                            <p class="game-description">Здесь вы найдёте проекты разного уровня сложности: от простых форм до детализированных сцен, персонажей и анимаций. Буду честен, скорее всего вы не найдете ничего полезного там. Серьезно.</p>
+                        <div class="project-info">
+                            <h4>Работы в Blender</h4>
+                            <p>Проекты разного уровня: от простых форм до детализированных сцен. Скорее всего, бесполезно. Серьезно.</p>
                         </div>
                     </div>
                 </div>
@@ -116,9 +120,8 @@
 
         <section id="github-projects" data-section-title="GitHub Репозитории">
             <div class="container">
-                <h3 class="animate-on-scroll fade-in">Open Source & GitHub</h3>
+                <h3 class="section-title animate-on-scroll fade-in">Open Source & GitHub</h3>
                 <div id="github-repos-container" class="project-grid"></div>
-
                 <p class="github-profile-link animate-on-scroll fade-in">
                     <a href="https://github.com/ReNothingg" target="_blank" id="view-all-github-link">
                         Больше на GitHub → 
@@ -129,13 +132,13 @@
 
         <section id="news" data-section-title="Новости">
             <div class="container">
-                <h3 class="animate-on-scroll fade-in">Последние Новости</h3>
+                <h3 class="section-title animate-on-scroll fade-in">Последние Новости</h3>
                 <ul class="news-list">
                     <li class="animate-on-scroll fade-in-up">
                         <div class="news-content">
                             <span class="news-date">20.07.2025</span>
                             <h4 class="news-title"><a href="https://github.com/ReNothingg/Draxon">Draxon</a></h4>
-                            <p>Draxon — это красивая, продуманная и "магическая" утилита для терминала, созданная для скачивания видео и аудио без необходимости запоминать сложные аргументы командной строки.</p>
+                            <p>Draxon — это красивая, продуманная и "магическая" утилита для терминала, созданная для скачивания видео и аудио.</p>
                         </div>
                     </li>
                     <li class="animate-on-scroll fade-in-up">
@@ -149,21 +152,7 @@
                         <div class="news-content">
                             <span class="news-date">28.06.2025</span>
                             <h4 class="news-title">Перенос на новую версию Unity</h4>
-                            <p>Из-за постоянных проблем с билдом в Unity 6 я решил перенести проект на новую версию Unity. Это позволит ускорить разработку и улучшить стабильность игры.</p>
-                        </div>
-                    </li>
-                    <li class="animate-on-scroll fade-in-up">
-                        <div class="news-content">
-                            <span class="news-date">20.06.2025</span>
-                            <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=a1svjKjnX9-RrOcx">Unity за 9 минут: Перемещение курсором</a></h4>
-                            <p>В этом видео я покажу, как всего за несколько минут реализовать физически реалистичное перемещение объектов мышкой в Unity. Подходит для интерактивных проектов, игр и симуляций.</p>
-                        </div>
-                    </li>
-                    <li class="animate-on-scroll fade-in-up">
-                        <div class="news-content">
-                            <span class="news-date">13.06.2025</span>
-                            <h4 class="news-title"><a href="https://youtu.be/dChuK_ugc5I?si=a1svjKjnX9-RrOcx">Unity за 15 минут: делаем Flappy Bird под Android</a></h4>
-                            <p>Привет! 👋 Это моё первое видео на YouTube, и я немного нервничал, так что возможны запинки — не судите строго :)</p>
+                            <p>Из-за постоянных проблем с билдом в Unity 6 я решил перенести проект на новую версию Unity.</p>
                         </div>
                     </li>
                 </ul>
@@ -173,10 +162,9 @@
 
         <section id="contact" data-section-title="Контакты">
             <div class="container">
-                <h3 class="animate-on-scroll fade-in">Связаться со мной</h3>
+                <h3 class="section-title animate-on-scroll fade-in">Связаться со мной</h3>
                 <p class="animate-on-scroll fade-in" data-animation-delay="0.1s">Готов обсудить ваши идеи или предложения о сотрудничестве.</p>
                 <a href="mailto:renothingg@gmail.com" class="email-link animate-on-scroll zoom-in" data-animation-delay="0.2s">renothingg@gmail.com</a>
-                <a href="https://boosty.to/blootber" class="email-link animate-on-scroll zoom-in" data-animation-delay="0.2s">Boosty</a>
                 <div class="social-links animate-on-scroll fade-in" data-animation-delay="0.3s">
                     <a href="https://www.youtube.com/@ReNothinggg" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     <a href="https://www.tiktok.com/@renothingg" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -193,7 +181,7 @@
 
     <footer>
         <div class="container">
-            <p>© <span id="currentYear"></span> ReNothingg. Все права защищены. Сделано с <span class="heart">🖤</span></p>
+            <p>© <span id="currentYear"></span> ReNothingg. Все права защищены. Сделано с <span class="heart">🤍</span></p>
         </div>
     </footer>
 
