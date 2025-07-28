@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             links: [],
             timeline: [
                 { type: 'image', src: 'knitting/1.jpg', caption: '2025: Змея. Вот такая получилась.' },
+                { type: 'image', src: 'knitting/IMG_20250728_181518_925.jpg', caption: '2025: продолжаю учиться! Получается на весь "браслет" ушло пол часа. А на средние концов ушло 10 минут. Я честно не уверен что сделал правильно, но оно держится что не может не радовать.' },
             ],
             audioTracks: []
         },
