@@ -7,6 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets\favicon.png" type="image/png">
+    <style>
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 12px;
+            margin: 30px auto;
+            box-shadow: var(--card-shadow);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -32,9 +53,52 @@
             <div class="hero-content">
                 <h2 class="animate-on-scroll fade-in-up">Floppa RUN</h2>
                 <p class="subtitle animate-on-scroll fade-in-up" data-animation-delay="200">Захватывающий бесконечный раннер, где вы управляете Шлёпой, уворачиваясь от препятствий и собирая пельмени!</p>
-                <a href="FloppaRun\FloppaRun.apk" download class="cta-button hero-cta animate-on-scroll fade-in-up" data-animation-delay="400"> Скачать бета </a>
+                <a href="FloppaRun\FloppaRun.apk" download class="cta-button hero-cta animate-on-scroll fade-in-up" data-animation-delay="400"> Скачать</a>
             </div>
         </section>
+
+        
+        <section id="media" data-scroll-target>
+            <div class="container">
+                <h3 class="animate-on-scroll fade-in">Медиа Галерея</h3>
+                <div class="video-container" data-aos="zoom-in-up">
+                    <iframe src="https://www.youtube.com/embed/TxZVIGn5Rf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="media-grid">
+                    <div class="media-item animate-on-scroll fade-in-left">
+                        <a href="assets/screenshots/img1.png" data-lightbox="gallery" title="Описание скриншота 1">
+                            <img src="assets/screenshots/img1.png" alt="Скриншот игры 1">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="150">
+                         <a href="assets/screenshots/img2.png" data-lightbox="gallery" title="Описание скриншота 2">
+                            <img src="assets/screenshots/img2.png" alt="Скриншот игры 2">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/img3.png" data-lightbox="gallery" title="Описание скриншота 3">
+                            <img src="assets/screenshots/img3.png" alt="Скриншот игры 3">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/img4.png" data-lightbox="gallery" title="Описание скриншота 4">
+                            <img src="assets/screenshots/img4.png" alt="Скриншот игры 4">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/img5.png" data-lightbox="gallery" title="Описание скриншота 5">
+                            <img src="assets/screenshots/img5.png" alt="Скриншот игры 5">
+                        </a>
+                    </div>
+                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
+                         <a href="assets/screenshots/img6.png" data-lightbox="gallery" title="Описание скриншота 6">
+                            <img src="assets/screenshots/img6.png" alt="Скриншот игры 6">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <section id="features" data-scroll-target>
             <div class="container">
@@ -64,45 +128,6 @@
                             Собирай пельмени, лови бусты, уклоняйся от преград и доберись до финиша — если он вообще есть.
                             Только реакция и немного удачи помогут выжить в этом безумии.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="media" data-scroll-target>
-            <div class="container">
-                <h3 class="animate-on-scroll fade-in">Медиа Галерея</h3>
-                <div class="media-grid">
-                    <div class="media-item animate-on-scroll fade-in-left">
-                        <a href="assets/screenshots/screen1.jpg" data-lightbox="gallery" title="Описание скриншота 1">
-                            <img src="assets/screenshots/screen1.jpg" alt="Скриншот игры 1">
-                        </a>
-                    </div>
-                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="150">
-                         <a href="assets/screenshots/screen2.jpg" data-lightbox="gallery" title="Описание скриншота 2">
-                            <img src="assets/screenshots/screen2.jpg" alt="Скриншот игры 1">
-                        </a>
-                    </div>
-                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
-                         <a href="assets/screenshots/screen3.jpg" data-lightbox="gallery" title="Описание скриншота 3">
-                            <img src="assets/screenshots/screen3.jpg" alt="Скриншот игры 1">
-                        </a>
-                    </div>
-                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
-                         <a href="assets/screenshots/screen4.jpg" data-lightbox="gallery" title="Описание скриншота 3">
-                            <img src="assets/screenshots/screen4.jpg" alt="Скриншот игры 1">
-                        </a>
-                    </div>
-                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
-                         <a href="assets/screenshots/screen5.jpg" data-lightbox="gallery" title="Описание скриншота 3">
-                            <img src="assets/screenshots/screen5.jpg" alt="Скриншот игры 1">
-                        </a>
-                    </div>
-                    <div class="media-item animate-on-scroll fade-in-left" data-animation-delay="300">
-                         <a href="assets/screenshots/screen6.jpg" data-lightbox="gallery" title="Описание скриншота 3">
-                            <img src="assets/screenshots/screen6.jpg" alt="Скриншот игры 1">
-                        </a>
                     </div>
                 </div>
             </div>
