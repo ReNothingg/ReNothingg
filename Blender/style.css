@@ -64,7 +64,6 @@ header h1 {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUpItem var(--animation-duration) ease-out forwards;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
 }
@@ -193,7 +192,6 @@ header h1 {
 .lightbox-close:focus {
     color: var(--text-color);
     text-decoration: none;
-    cursor: pointer;
 }
 
 .lightbox-header {

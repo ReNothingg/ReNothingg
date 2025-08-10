@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { url: 'https://www.youtube.com/@ReNothinggg', text: 'Мой YouTube', icon: 'fab fa-youtube' },
             ],
             timeline: [
+                { type: 'youtube', videoId: 'ae-6QArWrdI', caption: 'ChessAI' },
                 { type: 'youtube', videoId: 'SU5lVPNFXbE', caption: 'AI Learns Geometry Dash' },
                 { type: 'youtube', videoId: 'XlHLGmczQa0', caption: 'Floppa RUN - Theme' },
                 { type: 'youtube', videoId: 'dChuK_ugc5I', caption: 'Unity за 15 минут: делаем Flappy Bird под Android' },
