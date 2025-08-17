@@ -207,6 +207,22 @@ document.addEventListener('DOMContentLoaded', function() {
         currentYearElement.textContent = new Date().getFullYear();
     }
 
+    const techCards = document.querySelectorAll('.tech-card');
+    techCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            document.body.classList.add('cursor-hovered');
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            document.body.classList.remove('cursor-hovered');
+        });
+        
+        card.addEventListener('click', function() {
+            const techName = this.querySelector('.tech-name').textContent;
+            console.log(`Clicked on: ${techName}`);
+        });
+    });
+
     window.addEventListener('scroll', () => {
         handleHeaderAndNav();
         handleScrollEffects();
