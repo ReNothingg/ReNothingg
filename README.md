@@ -18,8 +18,6 @@
 [![Profile Views](https://count.getloli.com/get/@renothingg?theme=rule34)](https://github.com/renothingg)
 </div>
 
-**Full-Stack Developer | Creative Technologist | Game Developer**
-
 [![Website](https://img.shields.io/badge/🌐_Website-00ff00?style=for-the-badge&logo=globe&logoColor=black)](https://renothingg.github.io/ReNothingg/)
 [![Telegram](https://img.shields.io/badge/💬_Telegram-0088CC?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ReNothingg)
 [![Steam](https://img.shields.io/badge/🎮_Steam-181B21?style=for-the-badge&logo=steam&logoColor=white)](https://steamcommunity.com/id/Arbuzekkk)
