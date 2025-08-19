@@ -1,83 +1,185 @@
-<p align="center">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Nunito+&weight=900&size=35&pause=1000&color=09F716&width=435&lines=%D0%94%D0%BE%D0%B1%D1%80%D0%BE+%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D0%BE%D0%B2%D0%B0%D1%82%D1%8C!;%D0%AD%D1%82%D0%BE+GitHub+ReNothingg" alt="Typing SVG" /></a>
-</p> 
 
+<div align="center">
+
+```bash
+ /$$$$$$$            /$$   /$$             /$$     /$$       /$$                              
+| $$__  $$          | $$$ | $$            | $$    | $$      |__/                              
+| $$  \ $$  /$$$$$$ | $$$$| $$  /$$$$$$  /$$$$$$  | $$$$$$$  /$$ /$$$$$$$   /$$$$$$   /$$$$$$ 
+| $$$$$$$/ /$$__  $$| $$ $$ $$ /$$__  $$|_  $$_/  | $$__  $$| $$| $$__  $$ /$$__  $$ /$$__  $$
+| $$__  $$| $$$$$$$$| $$  $$$$| $$  \ $$  | $$    | $$  \ $$| $$| $$  \ $$| $$  \ $$| $$  \ $$
+| $$  \ $$| $$_____/| $$\  $$$| $$  | $$  | $$ /$$| $$  | $$| $$| $$  | $$| $$  | $$| $$  | $$
+| $$  | $$|  $$$$$$$| $$ \  $$|  $$$$$$/  |  $$$$/| $$  | $$| $$| $$  | $$|  $$$$$$$|  $$$$$$$
+|__/  |__/ \_______/|__/  \__/ \______/    \___/  |__/  |__/|__/|__/  |__/ \____  $$ \____  $$
+                                                                           /$$  \ $$ /$$  \ $$
+                                                                          |  $$$$$$/|  $$$$$$/
+                                                                           \______/  \______/ 
+```
+
+**Full-Stack Developer | Creative Technologist | Game Developer**
+
+[![GitHub Profile Views](https://count.getloli.com/get/@renothingg?theme=rule34)](https://github.com/renothingg)
+
+[![GitHub Followers](https://img.shields.io/github/followers/renothingg?label=Followers&style=for-the-badge&color=00ff00)](https://github.com/renothingg)
+
+[![GitHub Stars](https://img.shields.io/github/stars/renothingg?label=Stars&style=for-the-badge&color=00ff00)](https://github.com/renothingg)
+
+</div>
+
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           🔗 QUICK LINKS 🔗                             ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
 <p align="center">
-  <a href="https://github.com/renothingg">
-    <img src="https://count.getloli.com/get/@renothingg?theme=rule34" alt="Visit Count" />
-  </a>
-</p> 
- 
-<p align="center">
-  <a href="https://boosty.to/blootber" target="_blank">
-    <img src="https://img.shields.io/badge/Поддержать%20на%20Boosty-FF5C00?style=for-the-badge&logo=boosty&logoColor=white" alt="Boosty Button" /> </a>
-  <a href="https://renothingg.github.io/ReNothingg/"><img src="https://img.shields.io/badge/🌐-Мой%20сайт-4ABCF1?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" /></a>
+  <a href="https://renothingg.github.io/ReNothingg/"><img src="https://img.shields.io/badge/🌐_WEBSITE-00ff00?style=for-the-badge&logo=probot&logoColor=black"></a>
+  <a href="https://t.me/ReNothingg"><img src="https://img.shields.io/badge/💬_TELEGRAM-0088CC?style=for-the-badge&logo=telegram&logoColor=white"></a>
+  <a href="https://steamcommunity.com/id/Arbuzekkk"><img src="https://img.shields.io/badge/🎮_STEAM-181B21?style=for-the-badge&logo=steam&logoColor=white"></a>
+  <a href="https://www.tiktok.com/@renothingg"><img src="https://img.shields.io/badge/📱_TIKTOK-000000?style=for-the-badge&logo=tiktok&logoColor=white"></a>
+  <a href="https://x.com/BLOOTBER515"><img src="https://img.shields.io/badge/🐦_X_(TWITTER)-000000?style=for-the-badge&logo=x&logoColor=white"></a>
+  <a href="https://boosty.to/blootber"><img src="https://img.shields.io/badge/💝_SUPPORT-FF5C00?style=for-the-badge&logo=boosty&logoColor=white"></a>
 </p>
 
-<p align="center">
-  <a href="https://www.tiktok.com/@renothingg" target="_blank">
-    <img src="https://img.shields.io/badge/TikTok-%23000000?style=for-the-badge&logo=tiktok&logoColor=white" alt="TikTok" />
-  </a>
-  <a href="https://steamcommunity.com/id/Arbuzekkk" target="_blank">
-    <img src="https://img.shields.io/badge/Steam-%23181B21?style=for-the-badge&logo=steam&logoColor=white" alt="Steam" />
-  </a>
-  <a href="https://t.me/ReNothingg" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-0088CC?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
-  </a>
-  <a href="https://x.com/BLOOTBER515" target="_blank">
-    <img src="https://img.shields.io/badge/X-%23000000?style=for-the-badge&logo=twitter&logoColor=white" alt="X (Twitter)" />
-  </a>
-</p>
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                           👨‍💻 ABOUT ME 👨‍💻                                ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
 
----
+```bash
+$ whoami
+┌─────────────────────────────────────────────────────────────────────────┐
+│  ~$ cat about.txt                                                       │
+│  ───────────────────────────────────────────────────────────────────    │
+│  🎯 Full-Stack Developer & Creative Technologist.                       │
+│  🚀 Programming since 2015. Always pushing boundaries in tech.          │
+│  🎮 Passionate about Game Development, 3D Graphics, and visual design.  │
+│  🤖 Exploring the frontiers of AI & Machine Learning.                   │
+│  🎨 Lover of automation, optimization, and beautiful UI/UX.             │
+│  ❄️ Winter aesthetics enthusiast. Cat person (obviously).               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-## 👋 Обо мне 
-Привет! Я увлечён программированием, видеомонтажом и всем, что связано с креативными и технологичными штуками. Люблю зиму и зимние проекты ❄️, но и летом нахожу вдохновение.  
-Сейчас занимаюсь разработкой веб‑приложений, экспериментирую с Unity/Unreal, изучаю новые фреймворки и AI-инструменты. Всегда открыт к сотрудничеству над интересными проектами и идеями.
-- 🌱 **Изучаю:** продвинутые техники в Unreal Engine, машинное обучение, AI, автоматизацию CI/CD GitHub Actions для проектов.  
-- 💬 **Люблю обсудить:** креативные подходы в UI/UX, зимнюю эстетику в дизайне, алгоритмы оптимизации рендеринга, кошки или вид музыки. 
-- 📫 **Связаться:** [Telegram](https://t.me/ReNothingg) | renothingg@gmail.com  
-- ⚡ **Fun Fact:** чаще всего нажимаю `Ctrl+Z`, потому что не всегда надо жить с последствиями своих решений  
-- 🎮 **Любимый движок:** Unity (пока не начнёт требовать донаты за каждый прыжок персонажа) 🙃  
-- 📆 **Опыт в программировании:** с 2015 года (15+ лет практики и экспериментов).
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        🛠️ TECH STACK 🛠️                                 ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
 
----
+```bash
+$ ls -la skills/
+┌─────────────────────────────────────────────────────────────────────────┐
+│  > LANGUAGES                                                            │
+│    ├── Python, C++, C#, JavaScript, HTML5, CSS3                         │
+│                                                                         │
+│  > FRAMEWORKS & ENGINES                                                 │
+│    ├── Unity, Unreal Engine, Vue.js                                     │
+│                                                                         │
+│  > TOOLS & PLATFORMS                                                    │
+│    ├── Docker, Git, Linux, Postman, Figma                               │
+│                                                                         │
+│  > CURRENTLY LEARNING                                                   │
+│    ├── Advanced Unreal Engine, Machine Learning & AI Tools, CI/CD       │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-## 📊 Статистика GitHub / GitHub Stats
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=58a6ff&line=58a6ff&point=58a6ff&area=true&area_color=161b22&radius=8&hide_border=true" alt="Activity Graph" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ReNothingg&theme=dark&hide_border=true" alt="Streak Stats" />
-</p>
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=renothingg&layout=compact&langs_count=6&theme=dark&hide_border=true" alt="Top Languages" />
-  <img src="https://github-profile-trophy.vercel.app/?username=renothingg&theme=dark&no-bg=true&no-frame=true&margin-w=10&margin-h=10" alt="Trophies" />
-</p>
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        📊 GITHUB STATS 📊                               ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+<div align="center">
 
----
+![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=00ff00&line=00ff00&point=00ff00&area=true&area_color=0a0a0a&radius=8&hide_border=true)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ReNothingg&theme=dark&hide_border=true&background=0d1117&stroke=00ff00&ring=00ff00&fire=00ff00&currStreakNum=00ff00&sideNums=00ff00&currStreakLabel=00ff00&sideLabels=00ff00&dates=666666)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=renothingg&layout=compact&langs_count=6&theme=dark&hide_border=true&bg_color=0d1117&title_color=00ff00&text_color=ffffff&icon_color=00ff00)
+![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=renothingg&theme=dark&no-bg=true&no-frame=true&margin-w=10&margin-h=10&title=MultiLanguage,Repositories,Stars,Commits,Issues,PullRequest)
 
+</div>
 
-## 🛠️ Технологии и инструменты / Tech & Tools
-<p align="center">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python" alt="Python"/>
-  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B" alt="C++"/>
-  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp" alt="C#"/>
-  <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs" alt="Vue.js"/>
-  <img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity" alt="Unity"/>
-  <img src="https://img.shields.io/badge/Unreal_Engine-0E1128?style=for-the-badge&logo=unrealengine" alt="Unreal Engine"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker" alt="Docker"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git" alt="Git"/>
-  <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman" alt="Postman"/>
-  <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma" alt="Figma"/>
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux" alt="Linux"/>
-</p>
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        🎯 CURRENT PROJECTS 🎯                           ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
 
----
+```bash
+$ ls -la projects/
+┌─────────────────────────────────────────────────────────────────────────┐
+│  FLOPPA RUN                                                             │
+│  └─ Раннер, где вы управляете Шлёпой                                    │
+│                                                                         │
+│  BLENDER                                                                │
+│  └─ Работы в blender                                                    │
+│                                                                         │
+│  [F]CUBE                                                                │
+│  └─ Limitless sandbox for pure creativity and experimentation.          │
+│                                                                         │
+│  SynvexAI                                                               │
+│  └─ Создаём ИИ, чтобы технологии служили человеку.                      │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-<p align="center">
-  <img src="render1.png" alt="Render1" />
-</p>
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        🚀 GET IN TOUCH 🚀                               ⥥
+╚══════════════════════════════════════════════════════════════════════════╝
+```
 
-<p align="center">✨ Спасибо за визит! / Thanks for stopping by! ✨</p>
+```bash
+$ contact --help
+┌─────────────────────────────────────────────────────────────────────────┐
+│  🤝 I'm open to collaborations and interesting projects.                │
+│  💡 Let's discuss creative ideas & build something amazing together!     │
+│  ───────────────────────────────────────────────────────────────────    │
+│  📧 EMAIL:    renothingg@gmail.com                                      │
+│  💬 TELEGRAM: @ReNothingg                                               │
+│  🐦 X:        @BLOOTBER515                                              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        🎨 RENDER SHOWCASE 🎨                            ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+
+<div align="center">
+  <img src="render1.png" alt="3D Render Showcase" width="600" style="border-radius: 10px; box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);" />
+</div>
+
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        🎉 FUN FACTS 🎉                                  ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+
+```bash
+$ cat /dev/random | grep fun_fact
+┌─────────────────────────────────────────────────────────────────────────┐
+│  - Favorite keyboard shortcut: Ctrl+Z                                   │
+│  - Favorite season: Winter (obviously)                                  │
+│  - Unity > Unreal (until they start charging for jumps)                 │
+│  - Music taste: Everything that fits the winter vibe                    │
+│  - Life motto: "Always push boundaries"                                 │
+└─────────────────────────────────────────────────────────────────────────┘
+```
+
+```bash
+╔══════════════════════════════════════════════════════════════════════════╗
+║                        🚪 EXIT 🚪                                       ║
+╚══════════════════════════════════════════════════════════════════════════╝
+```
+
+```bash
+$ echo "Thanks for visiting! Hope you enjoyed the terminal experience! 🚀"
+Thanks for visiting! Hope you enjoyed the terminal experience! 🚀
+
+$ exit
+```
+<div align="center">
+
+### ✨ **Спасибо за визит! / Thanks for stopping by!** ✨
+</div>
