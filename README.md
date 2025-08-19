@@ -15,8 +15,6 @@
                                                                            \______/  \______/ 
 ```
 
-[![Profile Views](https://count.getloli.com/get/@renothingg?theme=rule34)](https://github.com/renothingg)
-</div>
 
 [![Website](https://img.shields.io/badge/🌐_Website-00ff00?style=for-the-badge&logo=globe&logoColor=black)](https://renothingg.github.io/ReNothingg/)
 [![Telegram](https://img.shields.io/badge/💬_Telegram-0088CC?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/ReNothingg)
@@ -24,6 +22,10 @@
 [![TikTok](https://img.shields.io/badge/📱_TikTok-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@renothingg)
 [![X](https://img.shields.io/badge/🐦_X_(Twitter)-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/BLOOTBER515)
 [![Support](https://img.shields.io/badge/💝_Support-FF5C00?style=for-the-badge&logo=heart&logoColor=white)](https://boosty.to/blootber)
+
+[![Profile Views](https://count.getloli.com/get/@renothingg?theme=rule34)](https://github.com/renothingg)
+
+</div>
 
 ---
 
