@@ -1,142 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
-    <title>Мои хобби — ReNothingg</title>
-    <link rel="icon" href="../icon.ico" type="image/x-icon">
-    <meta name="title" content="Мои хобби — ReNothingg" />
-    <meta name="description" content="Здесь я делюсь своими увлечениями, которые выходят за рамки кода." />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://renothingg.github.io/ReNothingg/" />
-    <meta property="og:title" content="Мои хобби — ReNothingg" />
-    <meta property="og:description" content="Здесь я делюсь своими увлечениями, которые выходят за рамки кода." />
-
-    <!-- X (Twitter) -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://renothingg.github.io/ReNothingg/" />
-    <meta property="twitter:title" content="Мои хобби — ReNothingg" />
-    <meta property="twitter:description" content="Здесь я делюсь своими увлечениями, которые выходят за рамки кода." />
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta http-equiv="refresh" content="0; url=https://renothingg.github.io/">
+<script>
+(function(){
+  const OLD_PREFIX = '/ReNothingg';
+  const HOST = 'https://renothingg.github.io';
+  const p = window.location.pathname || '/';
+  if (p.startsWith(OLD_PREFIX)) {
+    const newPath = p.slice(OLD_PREFIX.length) || '/';
+    const target = HOST + newPath + window.location.search + window.location.hash;
+    window.location.replace(target);
+  } else {
+    window.location.replace(HOST + window.location.pathname + window.location.search + window.location.hash);
+  }
+})();
+</script>
 </head>
 <body>
-    <div class="cursor-dot-outline"></div>
-    <div class="cursor-dot"></div>
-
-    <header id="main-header">
-        <div class="container header-container">
-            <div class="logo-area">
-                <a href="../index.html" class="logo-link"><h1 class="logo">ReNothingg</h1></a>
-            </div>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="../index.html#about" class="magnetic-link">Обо мне</a></li>
-                    <li><a href="../index.html#projects" class="magnetic-link">Проекты</a></li>
-                    <li><a href="../index.html#contact" class="magnetic-link">Контакты</a></li>
-                </ul>
-            </nav>
-            <button id="menu-toggle" aria-label="Открыть меню">
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-                <span class="hamburger-bar"></span>
-            </button>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-hero">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll fade-in">Мои Хобби</h2>
-                <p class="animate-on-scroll fade-in" data-animation-delay="0.1s">
-                    Технологии — это моя страсть, но мир намного шире. Здесь я делюсь тем, что помогает мне перезагружаться, находить вдохновение и смотреть на вещи под другим углом.
-                </p>
-            </div>
-        </section>
-
-        <section id="hobbies">
-            <div class="container">
-                <div class="hobby-grid">
-                    <div class="hobby-card interactive-card animate-on-scroll fade-in-up" data-hobby-id="knitting">
-                        <div class="hobby-image-container">
-                             <img src="knitting\favicon.png" alt="Вязание">
-                        </div>
-                        <div class="hobby-card-info">
-                            <h4>Вязание</h4>
-                            <p>Учусь вязанию. Это помогает мне расслабиться и сосредоточиться на процессе создания.</p>
-                        </div>
-                    </div>
-
-                    <div class="hobby-card interactive-card animate-on-scroll fade-in-up" data-animation-delay="0.1s" data-hobby-id="music">
-                        <div class="hobby-image-container">
-                             <img src="music/favicon.png" alt="FL Studio">
-                        </div>
-                        <div class="hobby-card-info">
-                            <h4>Музыка и FL Studio</h4>
-                            <p>Изучаю создание музыки в FL Studio. Экспериментирую с жанрами и техниками.</p>
-                        </div>
-                    </div>
-                    <div class="hobby-card interactive-card animate-on-scroll fade-in-up" data-animation-delay="0.2s" data-hobby-id="video">
-                        <div class="hobby-image-container">
-                             <img src="video/favicon.png" alt="Видеоредактор">
-                        </div>
-                        <div class="hobby-card-info">
-                            <h4>Видеомонтаж</h4>
-                            <p>Изучаю видеомонтаж и работу с DaVinci Resolve для создания контента.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <div class="hobby-modal" id="hobbyModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 id="modal-title"></h3>
-                <button class="modal-close-btn" id="modalCloseBtn" aria-label="Закрыть">×</button>
-            </div>
-            <div class="modal-body">
-                <p id="modal-description"></p>
-                
-                <div id="modal-links-section" class="modal-section" style="display: none;">
-                    <div id="modal-links-container">
-                    </div>
-                </div>
-                
-                <div id="modal-audio-section" class="modal-section" style="display: none;">
-                    <h4 class="modal-section-title">Аудио</h4>
-                    <div id="modal-audio-container">
-                    </div>
-                </div>
-
-                <div id="modal-timeline-section" class="modal-section" style="display: none;">
-                    <h4 class="modal-section-title">Видосы</h4>
-                    <div id="modal-timeline">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <footer>
-        <div class="container">
-            <p>© <span id="currentYear"></span> ReNothingg. Все права защищены. Сделано с <span class="heart">🤍</span></p>
-        </div>
-    </footer>
-
-    <button id="scrollToTopBtn" title="Наверх" aria-label="Вернуться наверх">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"/></svg>
-    </button>
-
-    <script src="../script.js" defer></script>
-    <script src="script.js" defer></script>
+Redirecting… If you are not redirected, <a id="link" href="https://renothingg.github.io/">click here</a>.
 </body>
 </html>

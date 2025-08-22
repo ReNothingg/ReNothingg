@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blender</title>
-    <link rel="icon" href="../icon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"></link>
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<meta http-equiv="refresh" content="0; url=https://renothingg.github.io/">
+<script>
+(function(){
+  const OLD_PREFIX = '/ReNothingg';
+  const HOST = 'https://renothingg.github.io';
+  const p = window.location.pathname || '/';
+  if (p.startsWith(OLD_PREFIX)) {
+    const newPath = p.slice(OLD_PREFIX.length) || '/';
+    const target = HOST + newPath + window.location.search + window.location.hash;
+    window.location.replace(target);
+  } else {
+    window.location.replace(HOST + window.location.pathname + window.location.search + window.location.hash);
+  }
+})();
+</script>
 </head>
 <body>
-    <header>
-        <h1>Портфолио Blender</h1>
-    </header>
-    <main>
-        <div id="gallery-container" class="gallery-container">
-        </div>
-    </main>
-
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close">×</span>
-            <div class="lightbox-header">
-                <div class="lightbox-info">
-                    <span id="lightbox-filename"></span>
-                    <span id="lightbox-resolution"></span>
-                    <span id="lightbox-filesize"></span>
-                </div>
-                <a href="#" id="lightbox-download-button" class="lightbox-download-btn" download>Скачать</a>
-            </div>
-            <div id="lightbox-media-container">
-            </div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+Redirecting… If you are not redirected, <a id="link" href="https://renothingg.github.io/">click here</a>.
 </body>
 </html>
