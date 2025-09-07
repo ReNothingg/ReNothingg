@@ -67,13 +67,20 @@
 
 <div align="center">
 
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&count_private=true&include_all_commits=true&hide=contribs&theme=dark&bg_color=0d1117&title_color=00ff00&icon_color=00ff00&text_color=ffffff&hide_border=true)
+
+[![GitHub Streak](https://streak-stats.demolab.com?user=renothingg&theme=hacker&border_radius=14&locale=ru&card_width=440&card_height=220)](https://git.io/streak-stats)
+
 ![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=00ff00&line=00ff00&point=00ff00&area=true&area_color=0a0a0a&radius=8&hide_border=true)
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=ReNothingg&theme=dark&hide_border=true&background=0d1117&stroke=00ff00&ring=00ff00&fire=00ff00&currStreakNum=00ff00&sideNums=00ff00&currStreakLabel=00ff00&sideLabels=00ff00&dates=666666)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=renothingg&layout=compact&langs_count=6&theme=dark&hide_border=true&bg_color=0d1117&title_color=00ff00&text_color=ffffff&icon_color=00ff00)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=renothingg&layout=compact&langs_count=8&theme=dark&hide_border=true&bg_color=0d1117&title_color=00ff00&text_color=ffffff&icon_color=00ff00)
 
 ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=renothingg&theme=dark&no-bg=true&no-frame=true&margin-w=10&margin-h=10&title=MultiLanguage,Repositories,Stars,Commits,Issues,PullRequest)
+
+<img alt="followers" src="https://img.shields.io/github/followers/renothingg?label=Followers&logo=github&style=for-the-badge&color=00ff00&logoColor=0d1117">
+<img alt="repos" src="https://img.shields.io/github/repo-size/renothingg/ReMind?label=Repo+size&style=for-the-badge&color=00ff00&logo=repo">
+<img alt="public repos" src="https://img.shields.io/github/search/renothingg?label=Public+repos&query=repo&style=for-the-badge&color=00ff00">
+<img alt="stars" src="https://img.shields.io/github/stars/renothingg?style=for-the-badge&color=00ff00">
 
 </div>
 
