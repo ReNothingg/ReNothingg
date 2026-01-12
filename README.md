@@ -69,10 +69,6 @@
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=renothingg&show_icons=true&count_private=true&include_all_commits=true&hide=contribs&theme=dark&bg_color=0d1117&title_color=00ff00&icon_color=00ff00&text_color=ffffff&hide_border=true)
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=renothingg&theme=hacker&border_radius=14&locale=ru&card_width=440&card_height=220)](https://git.io/streak-stats)
-
-![GitHub Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=renothingg&bg_color=0d1117&color=00ff00&line=00ff00&point=00ff00&area=true&area_color=0a0a0a&radius=8&hide_border=true)
-
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=renothingg&layout=compact&langs_count=8&theme=dark&hide_border=true&bg_color=0d1117&title_color=00ff00&text_color=ffffff&icon_color=00ff00)
 
 ![GitHub Trophies](https://github-profile-trophy.vercel.app/?username=renothingg&theme=dark&no-bg=true&no-frame=true&margin-w=10&margin-h=10&title=MultiLanguage,Repositories,Stars,Commits,Issues,PullRequest)
@@ -90,13 +86,13 @@
 
 Я открыт для коллабораций и интересных проектов! Давайте обсудим креативные идеи и создадим что-то удивительное вместе.
 
-- 📧 **Email:** renothingg@gmail.com
-- 💬 **Telegram:** [@ReNothingg](https://t.me/ReNothingg)
-- 💬 **Telegram:** [@ReNothinggTube](https://t.me/ReNothinggTube)
-- 🐦 **X (Twitter):** [@BLOOTBER515](https://x.com/BLOOTBER515)
-- 🎮 **Steam:** [Arbuzekkk](https://steamcommunity.com/id/Arbuzekkk)
-- 📽️ **YouTube:** [ReNothinggg](https://www.youtube.com/@ReNothinggg)
-- 📽️ **TikTok:** [renothingg](https://www.tiktok.com/@renothingg)
+- **Email:** renothingg@gmail.com
+- **Telegram:** [@ReNothingg](https://t.me/ReNothingg)
+- **Telegram:** [@ReNothinggTube](https://t.me/ReNothinggTube)
+- **X (Twitter):** [@BLOOTBER515](https://x.com/BLOOTBER515)
+- **Steam:** [Arbuzekkk](https://steamcommunity.com/id/Arbuzekkk)
+- **YouTube:** [ReNothinggg](https://www.youtube.com/@ReNothinggg)
+- **TikTok:** [renothingg](https://www.tiktok.com/@renothingg)
 
 ---
 
